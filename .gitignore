@@ -55,3 +55,6 @@ buildNumber.properties
 .env
 .env.local
 .env.*
+# Node.js
+node_modules/
+
