@@ -153,4 +153,8 @@ public class User {
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
+
+    public String getUserType() {
+        return role.name();
+    }
 } 

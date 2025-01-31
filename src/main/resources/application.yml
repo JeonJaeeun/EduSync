@@ -80,3 +80,7 @@ logging:
       type.descriptor.sql.BasicBinder: TRACE
     org.springframework.security: DEBUG
     org.edusync.tutor: DEBUG
+
+jwt:
+  secret: yourSecretKey
+  expiration: 86400000  # 24시간
