@@ -1,6 +1,7 @@
 package org.edusync.entity;
 
 import jakarta.persistence.*;
+import java.time.LocalTime;
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,22 +11,41 @@ public class Lesson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "lecture_id", nullable = false)
-    private Lecture lecture;
+    @Column(nullable = false)
+    private String title;
+
+    @Column(length = 500)
+    private String description;
 
     @ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
+    @JoinColumn(name = "tutor_id", nullable = false)
+    private User tutor;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id")
     private User student;
 
-    @Column(nullable = false)
-    private LocalDateTime startTime;
+    private String subject;
+
+    @Column(name = "lesson_day")
+    private String lessonDay;
+
+    @Column(name = "lesson_start_time")
+    private LocalTime lessonStartTime;
+
+    @Column(name = "lesson_end_time")
+    private LocalTime lessonEndTime;
 
     @Column(nullable = false)
-    private LocalDateTime endTime;
+    private Integer maxStudents;
 
-    @Column(length = 255)
-    private String status;
+    private Integer tuition;
+
+    @Column(name = "tuition_cycle")
+    private String tuitionCycle;
+
+    @Column(nullable = false)
+    private Boolean isActive = true;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -53,12 +73,28 @@ public class Lesson {
         this.id = id;
     }
 
-    public Lecture getLecture() {
-        return lecture;
+    public String getTitle() {
+        return title;
     }
 
-    public void setLecture(Lecture lecture) {
-        this.lecture = lecture;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public User getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(User tutor) {
+        this.tutor = tutor;
     }
 
     public User getStudent() {
@@ -69,28 +105,68 @@ public class Lesson {
         this.student = student;
     }
 
-    public LocalDateTime getStartTime() {
-        return startTime;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public LocalDateTime getEndTime() {
-        return endTime;
+    public String getLessonDay() {
+        return lessonDay;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
+    public void setLessonDay(String lessonDay) {
+        this.lessonDay = lessonDay;
     }
 
-    public String getStatus() {
-        return status;
+    public LocalTime getLessonStartTime() {
+        return lessonStartTime;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setLessonStartTime(LocalTime lessonStartTime) {
+        this.lessonStartTime = lessonStartTime;
+    }
+
+    public LocalTime getLessonEndTime() {
+        return lessonEndTime;
+    }
+
+    public void setLessonEndTime(LocalTime lessonEndTime) {
+        this.lessonEndTime = lessonEndTime;
+    }
+
+    public Integer getMaxStudents() {
+        return maxStudents;
+    }
+
+    public void setMaxStudents(Integer maxStudents) {
+        this.maxStudents = maxStudents;
+    }
+
+    public Integer getTuition() {
+        return tuition;
+    }
+
+    public void setTuition(Integer tuition) {
+        this.tuition = tuition;
+    }
+
+    public String getTuitionCycle() {
+        return tuitionCycle;
+    }
+
+    public void setTuitionCycle(String tuitionCycle) {
+        this.tuitionCycle = tuitionCycle;
+    }
+
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Boolean active) {
+        isActive = active;
     }
 
     public LocalDateTime getCreatedAt() {

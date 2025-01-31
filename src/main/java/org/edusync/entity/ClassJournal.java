@@ -1,103 +1,103 @@
-package org.edusync.entity;
+// package org.edusync.entity;
 
-import jakarta.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+// import jakarta.persistence.*;
+// import java.time.LocalDate;
+// import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "class_journals")
-public class ClassJournal {
+// @Entity
+// @Table(name = "class_journals")
+// public class ClassJournal {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "lesson_id", nullable = false)
-    private Lesson lesson;
+//     @ManyToOne
+//     @JoinColumn(name = "lesson_id", nullable = false)
+//     private Lesson lesson;
 
-    @Column(nullable = false)
-    private LocalDate lessonDate;
+//     @Column(nullable = false)
+//     private LocalDate lessonDate;
 
-    @Column(length = 255)
-    private String progress;
+//     @Column(length = 255)
+//     private String progress;
 
-    @Lob
-    private String journalContent;
+//     @Lob
+//     private String journalContent;
 
-    private Integer homeworkCompletion;
+//     private Integer homeworkCompletion;
 
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+//     @Column(nullable = false, updatable = false)
+//     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
-    private LocalDateTime updatedAt;
+//     @Column(nullable = false)
+//     private LocalDateTime updatedAt;
 
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
+//     @PrePersist
+//     protected void onCreate() {
+//         createdAt = LocalDateTime.now();
+//         updatedAt = LocalDateTime.now();
+//     }
 
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
+//     @PreUpdate
+//     protected void onUpdate() {
+//         updatedAt = LocalDateTime.now();
+//     }
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+//     // Getters and Setters
+//     public Long getId() {
+//         return id;
+//     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//     public void setId(Long id) {
+//         this.id = id;
+//     }
 
-    public Lesson getLesson() {
-        return lesson;
-    }
+//     public Lesson getLesson() {
+//         return lesson;
+//     }
 
-    public void setLesson(Lesson lesson) {
-        this.lesson = lesson;
-    }
+//     public void setLesson(Lesson lesson) {
+//         this.lesson = lesson;
+//     }
 
-    public LocalDate getLessonDate() {
-        return lessonDate;
-    }
+//     public LocalDate getLessonDate() {
+//         return lessonDate;
+//     }
 
-    public void setLessonDate(LocalDate lessonDate) {
-        this.lessonDate = lessonDate;
-    }
+//     public void setLessonDate(LocalDate lessonDate) {
+//         this.lessonDate = lessonDate;
+//     }
 
-    public String getProgress() {
-        return progress;
-    }
+//     public String getProgress() {
+//         return progress;
+//     }
 
-    public void setProgress(String progress) {
-        this.progress = progress;
-    }
+//     public void setProgress(String progress) {
+//         this.progress = progress;
+//     }
 
-    public String getJournalContent() {
-        return journalContent;
-    }
+//     public String getJournalContent() {
+//         return journalContent;
+//     }
 
-    public void setJournalContent(String journalContent) {
-        this.journalContent = journalContent;
-    }
+//     public void setJournalContent(String journalContent) {
+//         this.journalContent = journalContent;
+//     }
 
-    public Integer getHomeworkCompletion() {
-        return homeworkCompletion;
-    }
+//     public Integer getHomeworkCompletion() {
+//         return homeworkCompletion;
+//     }
 
-    public void setHomeworkCompletion(Integer homeworkCompletion) {
-        this.homeworkCompletion = homeworkCompletion;
-    }
+//     public void setHomeworkCompletion(Integer homeworkCompletion) {
+//         this.homeworkCompletion = homeworkCompletion;
+//     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
+//     public LocalDateTime getCreatedAt() {
+//         return createdAt;
+//     }
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-} 
+//     public LocalDateTime getUpdatedAt() {
+//         return updatedAt;
+//     }
+// } 
