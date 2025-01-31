@@ -12,6 +12,12 @@ project-root/
  │         ├── gradle-wrapper.jar
  │         └── gradle-wrapper.properties
  ├── src/
+ |    ├── frontend/               # Expo 기반 프론트엔드
+ │    │    ├── expo/              # Expo 프로젝트 설정
+ │    │    ├── assets/            # 이미지 및 아이콘 리소스
+ │    │    ├── pages/             # 화면별 컴포넌트
+ │    │    ├── App.js             # Expo 진입점
+ │    │    └── package.json       # 프론트엔드 패키지 관리 파일
  │    ├── main/
  │    │    ├── java/                # Java 소스 코드 디렉터리
  │    │    │    └── org/
