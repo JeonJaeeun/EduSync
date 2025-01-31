@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.edusync.dto.LectureRequest;
 import org.edusync.entity.Lecture;
 import org.edusync.service.LectureService;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
