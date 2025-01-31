@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
-@ComponentScan
 @RestController
 @RequestMapping("/lectures")
 public class LectureController {
@@ -33,7 +32,7 @@ public class LectureController {
     public ResponseEntity<Map<String, Object>> createLecture(@RequestBody LectureRequest request) {
         logger.debug("Received create lecture request: {}", request);
         try {
-            logger.info("Attempting to create lecture with title: {}", request.getTitle());
+            logger.info("Attempting to create lecture with subject: {}", request.getSubject());
             Lecture savedLecture = lectureService.createLecture(request);
             logger.info("Successfully created lecture with ID: {}", savedLecture.getId());
             
