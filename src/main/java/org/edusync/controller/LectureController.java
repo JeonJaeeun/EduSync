@@ -1,8 +1,11 @@
 package org.edusync.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.edusync.dto.LectureRequest;
 import org.edusync.entity.Lecture;
 import org.edusync.service.LectureService;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,30 +15,49 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
+@ComponentScan
 @RestController
-@RequestMapping("/api/lectures")
+@RequestMapping("/lectures")
 public class LectureController {
     
+    private static final Logger logger = LoggerFactory.getLogger(LectureController.class);
     private final LectureService lectureService;
 
     public LectureController(LectureService lectureService) {
         this.lectureService = lectureService;
+        logger.info("LectureController initialized with lectureService: {}", lectureService);
     }
 
     @PostMapping
     @PreAuthorize("hasRole('TEACHER')")
     public ResponseEntity<Map<String, Object>> createLecture(@RequestBody LectureRequest request) {
-        Lecture savedLecture = lectureService.createLecture(request);
-        Map<String, Object> response = new HashMap<>();
-        response.put("message", "Lecture created successfully");
-        response.put("lectureId", savedLecture.getId());
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        logger.debug("Received create lecture request: {}", request);
+        try {
+            logger.info("Attempting to create lecture with title: {}", request.getTitle());
+            Lecture savedLecture = lectureService.createLecture(request);
+            logger.info("Successfully created lecture with ID: {}", savedLecture.getId());
+            
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Lecture created successfully");
+            response.put("lectureId", savedLecture.getId());
+            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        } catch (Exception e) {
+            logger.error("Failed to create lecture", e);
+            throw e;
+        }
     }
 
     @GetMapping
     public ResponseEntity<List<Lecture>> getAllLectures() {
-        List<Lecture> lectures = lectureService.getAllLectures();
-        return ResponseEntity.ok(lectures);
+        logger.info("Fetching all lectures");
+        try {
+            List<Lecture> lectures = lectureService.getAllLectures();
+            logger.info("Found {} lectures", lectures.size());
+            return ResponseEntity.ok(lectures);
+        } catch (Exception e) {
+            logger.error("Failed to fetch lectures", e);
+            throw e;
+        }
     }
 
     @GetMapping("/{lectureId}")
