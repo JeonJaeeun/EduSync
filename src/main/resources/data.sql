@@ -1,9 +1,9 @@
 -- Sample users -- ChatGPT로 생성해둠.
-INSERT INTO users (email, password, nickname, phone_number, school_name, user_type, created_at, updated_at)
+INSERT INTO users (email, password, name, phone, school_name, role, created_at, updated_at)
 VALUES
     ('student1@example.com', 'hashed_password1', 'Student1', '01012345678', 'High School A', 'STUDENT', NOW(), NOW()),
-    ('parent1@example.com', 'hashed_password2', 'Parent1', '01087654321', 'High School A', 'PARENT', NOW(), NOW()),
-    ('teacher1@example.com', 'hashed_password3', 'Teacher1', '01055556666', 'High School A', 'TEACHER', NOW(), NOW());
+    ('parent1@example.com', 'hashed_password2', 'Parent1', '01087654321', 'High School A', 'TUTOR', NOW(), NOW()),
+    ('teacher1@example.com', 'hashed_password3', 'Teacher1', '01055556666', 'High School A', 'TUTOR', NOW(), NOW());
 
 -- Sample classes
 INSERT INTO classes (teacher_id, student_id, subject, lesson_day, lesson_start_time, lesson_end_time, tuition, tuition_cycle, created_at, updated_at)
