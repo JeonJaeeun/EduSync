@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.1'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'com.github.johnrengelman.processes' version '0.5.0'
 }
 
 group = 'org.edusync'
@@ -25,8 +26,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	// 3) JPA: Postgres/H2 등 SQL DB 연동
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	runtimeOnly 'org.postgresql:postgresql'   // PostgreSQL JDBC 드라이버
-	runtimeOnly 'com.h2database:h2'          // 개발/테스트용 H2 DB
+	implementation 'org.postgresql:postgresql'
+	runtimeOnly 'com.h2database:h2'
 
 	// 4) Querydsl 의존성 추가\ // Spring Boot 3.x 버전에서는 jakarta 네임스페이스를 사용
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
@@ -65,4 +66,11 @@ tasks.withType(JavaCompile).configureEach {
 // 4. 'clean' 작업이 수행될 때, 생성된 Q 클래스 디렉토리를 삭제하여 빌드 환경을 정리
 clean.doLast {
 	delete querydslDir
+}
+
+// 환경 변수 처리를 위한 설정
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
 }
