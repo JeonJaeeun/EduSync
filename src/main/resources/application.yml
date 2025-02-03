@@ -78,3 +78,9 @@ web:
   resources:
     static-locations: classpath:/static/
     add-mappings: true
+
+  sql:
+    init:
+      mode: always
+  jwt:
+    secret: eduedu1234 # JWT 암호화 키
