@@ -10,7 +10,21 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
   sql:
     init:
       mode: never  # 테스트에서는 data.sql 실행하지 않음 
+
+  flyway:
+    enabled: false  # 테스트에서는 Flyway 비활성화
+
+  security:
+    jwt:
+      secret: testsecretkeytestsecretkeytestsecretkeytestsecretkey
+      token-validity-in-seconds: 3600
+
+  main:
+    allow-bean-definition-overriding: true  # 빈 오버라이딩 허용 

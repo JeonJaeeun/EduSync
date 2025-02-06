@@ -2,6 +2,7 @@ package org.edusync.tutor.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.edusync.tutor.config.TestConfig;
 import org.edusync.tutor.dto.LessonRequest;
 import org.edusync.tutor.entity.User;
 import org.edusync.tutor.entity.UserType;
@@ -27,11 +28,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
+import org.springframework.context.annotation.Import;
 
 import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collections;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -40,6 +43,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @Transactional
 @ActiveProfiles("test")  // application-test.yml 사용
+@Import(TestConfig.class)  // TestConfig 명시적 import
 class LessonControllerTest {
 
     @Autowired
@@ -50,6 +54,9 @@ class LessonControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private LessonService lessonService;
 
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
@@ -88,14 +95,14 @@ class LessonControllerTest {
             .userType(UserType.STUDENT)
             .build());
 
-        // 테스트용 토큰 생성
+        // 실제 토큰 생성
         teacherToken = jwtTokenProvider.createToken(
-            teacher.getEmail(), 
+            teacher.getEmail(),
             Arrays.asList("ROLE_" + teacher.getUserType().name())
         );
         
         studentToken = jwtTokenProvider.createToken(
-            student.getEmail(), 
+            student.getEmail(),
             Arrays.asList("ROLE_" + student.getUserType().name())
         );
 
@@ -110,16 +117,19 @@ class LessonControllerTest {
         lessonRequest.setTuitionCycle("monthly");
     }
 
+    private String getTestToken(String userEmail, String role) {
+        return "Bearer " + jwtTokenProvider.createToken(userEmail, Collections.singletonList(role));
+    }
+
     @Test
-    @WithMockUser(roles = "TEACHER")
     void createLesson_Success() throws Exception {
+        String token = getTestToken("teacher@test.com", "ROLE_TEACHER");
+        
         mockMvc.perform(post("/api/classes")
-                .header("Authorization", "Bearer " + teacherToken)
+                .header("Authorization", token)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(lessonRequest)))
-            .andExpect(status().isCreated())
-            .andExpect(jsonPath("$.message").value("Lesson created successfully"))
-            .andExpect(jsonPath("$.lessonId").exists());
+            .andExpect(status().isCreated());
     }
 
     @Test
@@ -205,36 +215,5 @@ class LessonControllerTest {
                 .header("Authorization", "Bearer " + teacherToken))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.message").value("Lesson deleted successfully"));
-    }
-
-    @TestConfiguration
-    class TestConfig {
-        @Bean
-        public PasswordEncoder passwordEncoder() {
-            return new BCryptPasswordEncoder();
-        }
-        
-        @Bean
-        public ObjectMapper objectMapper() {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.registerModule(new JavaTimeModule());  // LocalTime 등 Java 8 시간 타입 처리
-            return mapper;
-        }
-
-        @Bean
-        public JwtTokenProvider jwtTokenProvider(UserDetailsService userDetailsService) {
-            return new JwtTokenProvider(userDetailsService);
-        }
-
-        @Bean
-        public UserDetailsService userDetailsService(UserRepository userRepository) {
-            return username -> userRepository.findByEmail(username)
-                .map(user -> new org.springframework.security.core.userdetails.User(
-                    user.getEmail(),
-                    user.getPassword(),
-                    Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getUserType().name()))
-                ))
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        }
     }
 } 

@@ -26,6 +26,7 @@ public class ClassJournal {
     private String progress;
 
     @Lob
+    @Column(name = "journal_content")
     private String journalContent;
 
     private Integer homeworkCompletion;

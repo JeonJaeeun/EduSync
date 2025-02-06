@@ -20,74 +20,85 @@ import org.springframework.stereotype.Component;
 import java.security.Key;
 import java.util.Date;
 import java.util.List;
+import java.nio.charset.StandardCharsets;
 
 @Component
 public class JwtTokenProvider {
 
     private final Logger LOGGER = LoggerFactory.getLogger(JwtTokenProvider.class);
     private final UserDetailsService userDetailsService;
+    private final String secret;
+    private final long tokenValidityInMilliseconds;
     private Key secretKey;
 
     @Autowired
-    public JwtTokenProvider(UserDetailsService userDetailsService) {
+    public JwtTokenProvider(
+            UserDetailsService userDetailsService,
+            @Value("${spring.security.jwt.secret}") String secret,
+            @Value("${spring.security.jwt.token-validity-in-seconds}") long tokenValidityInSeconds) {
         this.userDetailsService = userDetailsService;
+        this.secret = secret;
+        this.tokenValidityInMilliseconds = tokenValidityInSeconds * 1000;
+    }
+
+    // 테스트용 생성자
+    public JwtTokenProvider(String secret, long tokenValidityInSeconds) {
+        this.userDetailsService = null;  // 테스트에서는 별도로 주입
+        this.secret = secret;
+        this.tokenValidityInMilliseconds = tokenValidityInSeconds * 1000;
     }
 
     @PostConstruct
     protected void init() {
-        // secretKey 초기화
-        LOGGER.info("[init] JwtTokenProvider secretKey 초기화");
-        this.secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-        LOGGER.info("[init] JwtTokenProvider secretKey 초기화 완료");
+        byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
+        this.secretKey = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public String createToken(String userUid, List<String> roles) {
-        // 토큰 생성
-        LOGGER.info("[createToken] 토큰 생성 시작");
-        Claims claims = Jwts.claims().setSubject(userUid);
+    public String createToken(String userEmail, List<String> roles) {
+        Claims claims = Jwts.claims().setSubject(userEmail);
         claims.put("roles", roles);
 
         Date now = new Date();
-        String token = Jwts.builder()
-                .setClaims(claims)
-                .setIssuedAt(now)
-                .setExpiration(new Date(now.getTime() + 1000L * 60 * 60)) // 1시간 유효기간
-                .signWith(secretKey)
-                .compact();
+        Date validity = new Date(now.getTime() + tokenValidityInMilliseconds);
 
-        LOGGER.info("[createToken] 토큰 생성 완료");
-        return token;
+        return Jwts.builder()
+            .setClaims(claims)
+            .setIssuedAt(now)
+            .setExpiration(validity)
+            .signWith(secretKey)
+            .compact();
     }
 
     public Authentication getAuthentication(String token) {
-        // 토큰에서 인증 정보 가져오기
-        LOGGER.info("[getAuthentication] 토큰에서 인증 정보 가져오기");
         UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUsername(token));
-        LOGGER.info("[getAuthentication] 인증 정보 가져오기 완료, UserDetails UserName: {}", userDetails.getUsername());
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
     public String getUsername(String token) {
-        // 토큰에서 사용자 이름 추출
-        LOGGER.info("[getUsername] 토큰에서 사용자 이름 추출");
-        return Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().getSubject();
+        return Jwts.parserBuilder()
+            .setSigningKey(secretKey)
+            .build()
+            .parseClaimsJws(token)
+            .getBody()
+            .getSubject();
     }
 
     public String resolveToken(HttpServletRequest request) {
-        // HTTP 헤더에서 토큰 추출
-        LOGGER.info("[resolveToken] HTTP 헤더에서 토큰 추출");
-        return request.getHeader("X-AUTH-TOKEN");
+        String bearerToken = request.getHeader("Authorization");
+        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+            return bearerToken.substring(7);
+        }
+        return null;
     }
 
     public boolean validateToken(String token) {
-        // 토큰 유효성 검증
-        LOGGER.info("[validateToken] 토큰 유효성 검증 시작");
         try {
-            Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token);
-            LOGGER.info("[validateToken] 토큰 유효성 검증 성공");
+            Jws<Claims> claims = Jwts.parserBuilder()
+                .setSigningKey(secretKey)
+                .build()
+                .parseClaimsJws(token);
             return !claims.getBody().getExpiration().before(new Date());
         } catch (Exception e) {
-            LOGGER.info("[validateToken] 토큰 유효성 검증 실패");
             return false;
         }
     }
