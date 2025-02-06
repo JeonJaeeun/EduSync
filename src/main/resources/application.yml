@@ -3,9 +3,9 @@ spring:
     name: tutor
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/EduSyncDB
-    username: postgres
-    password: sshs1sshs!
+    url: jdbc:postgresql://localhost:5432/edusync
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
@@ -23,7 +23,7 @@ spring:
     open-in-view: false
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create  # 최초 실행시에만 create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -31,6 +31,7 @@ spring:
         show_sql: true
         use_sql_comments: true
         default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     defer-datasource-initialization: true
     generate-ddl: true
 
@@ -66,8 +67,8 @@ logging:
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: TRACE
 
 jwt:
-  secret: yourSecretKey
-  expiration: 86400000  # 24시간
+  secret: ${JWT_SECRET:defaultSecretKeyForDevelopment}
+  expiration: ${JWT_EXPIRATION:86400000}
 
 mvc:
   static-path-pattern: /static/**

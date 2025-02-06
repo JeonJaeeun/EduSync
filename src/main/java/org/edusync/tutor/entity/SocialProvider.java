@@ -1,17 +1,18 @@
 package org.edusync.tutor.entity;
 
-public enum UserType {
-    STUDENT("학생"),
-    PARENT("학부모"),
-    TEACHER("선생님");
+public enum SocialProvider {
+    NONE("일반"),
+    NAVER("네이버"),
+    GOOGLE("구글"),
+    KAKAO("카카오");
 
     private final String description;
 
-    UserType(String description) {
+    SocialProvider(String description) {
         this.description = description;
     }
 
     public String getDescription() {
         return description;
     }
-}
+} 

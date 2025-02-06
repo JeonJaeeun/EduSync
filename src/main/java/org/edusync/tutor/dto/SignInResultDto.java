@@ -2,19 +2,14 @@ package org.edusync.tutor.dto;
 
 import lombok.*;
 
-@Data
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode(callSuper=true)
-public class SignInResultDto extends SignUpResultDto {
-
+public class SignInResultDto {
+    private boolean success;
+    private int code;
+    private String msg;
     private String token;
-
-    @Builder
-    public SignInResultDto(boolean success, int code, String msg, String token) {
-        super(success, code, msg);
-        this.token = token;
-    }
-
 }

@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "org.edusync")
-@EntityScan("org.edusync.entity")
-@EnableJpaRepositories("org.edusync.repository")
+@ComponentScan(basePackages = "org.edusync.tutor")
+@EntityScan("org.edusync.tutor.entity")
+@EnableJpaRepositories("org.edusync.tutor.repository")
 public class TutorApplication {
 
 	public static void main(String[] args) {
