@@ -3,14 +3,18 @@ spring:
     name: tutor
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/edusync
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:password}
+    url: jdbc:postgresql://localhost:5432/EduSyncDB
+    username: postgres
+    password: sshs1sshs!
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 10
-      minimum-idle: 5
-      connection-timeout: 30000
+      connection-init-sql: SET NAMES 'UTF8'
+      connection-test-query: SELECT 1
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 30000
+      connection-timeout: 10000
+      max-lifetime: 1800000
 
   h2:
     console:
@@ -31,9 +35,9 @@ spring:
         show_sql: true
         use_sql_comments: true
         default_schema: public
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    defer-datasource-initialization: true
     generate-ddl: true
+    defer-datasource-initialization: true
+    database: postgresql
 
 # 인코딩 설정
 http:
@@ -57,18 +61,16 @@ server:
 logging:
   level:
     root: INFO
-    org.springframework.web: DEBUG
-    org.hibernate:
-      SQL: DEBUG
-      type.descriptor.sql.BasicBinder: TRACE
-    org.springframework.security: DEBUG
-    org.edusync.tutor: DEBUG
-    org.edusync: DEBUG
-    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: TRACE
+    org.edusync.tutor: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  file:
+    name: logs/edusync.log
 
 jwt:
-  secret: ${JWT_SECRET:defaultSecretKeyForDevelopment}
-  expiration: ${JWT_EXPIRATION:86400000}
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQ=
+  expiration: 86400000
 
 mvc:
   static-path-pattern: /static/**
@@ -83,5 +85,8 @@ web:
   sql:
     init:
       mode: always
-  jwt:
-    secret: eduedu1234 # JWT 암호화 키
+
+flyway:
+  enabled: false  # Flyway 비활성화
+  baseline-on-migrate: false
+  validate-on-migrate: false
