@@ -47,4 +47,4 @@ public class ClassJournal {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
-} 
+}
