@@ -1,0 +1,987 @@
+2025-02-15 17:30:42.676 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 24888 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 17:30:42.676 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 17:30:43.501 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 17:30:43.548 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 5 JPA repository interfaces.
+2025-02-15 17:30:44.461 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 17:30:44.477 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 17:30:44.477 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 17:30:44.477 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 17:30:44.540 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 17:30:44.540 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1768 ms
+2025-02-15 17:30:44.809 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 17:30:44.923 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 17:30:44.970 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 17:30:45.286 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 17:30:45.317 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 17:30:45.506 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3d59933
+2025-02-15 17:30:45.506 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 17:30:45.589 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 17:30:45.605 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 17:30:46.514 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 17:30:46.735 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 17:30:47.038 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 17:30:47.482 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 17:30:47.639 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 17:30:47.709 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 17:30:47.724 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 17:30:47.736 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 5.876 seconds (process running for 6.812)
+2025-02-15 17:31:03.670 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 17:31:03.670 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 17:31:03.675 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-02-15 17:31:03.742 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:03.742 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:03.890 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:03.890 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:03.909 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:03.909 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:03.909 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:03.909 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:03.909 [http-nio-8082-exec-7] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:03.909 [http-nio-8082-exec-7] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:03.909 [http-nio-8082-exec-8] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:03.909 [http-nio-8082-exec-8] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:04.064 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:04.065 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:04.143 [http-nio-8082-exec-6] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:31:04.143 [http-nio-8082-exec-6] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:31:04.866 [http-nio-8082-exec-6] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 701 ms
+2025-02-15 17:32:33.158 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:32:33.158 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:32:33.158 [http-nio-8082-exec-2] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : user1@gmail.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 17:32:33.158 [http-nio-8082-exec-2] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 17:32:33.443 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 17:32:33.641 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    /* insert for
+        org.edusync.tutor.entity.User */insert 
+    into
+        public.users (birth_date, class_name, created_at, email, grade, last_login_at, nickname, password, phone_number, profile_image_url, school_name, social_id, social_provider, updated_at, user_type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-02-15 17:32:33.708 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    /* insert for
+        org.edusync.tutor.entity.User.roles */insert 
+    into
+        public.user_roles (user_id, roles) 
+    values
+        (?, ?)
+2025-02-15 17:32:33.726 [http-nio-8082-exec-2] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 정상 처리 완료
+2025-02-15 17:32:33.726 [http-nio-8082-exec-2] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : user1@gmail.com
+2025-02-15 17:33:03.134 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:33:03.134 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:33:03.275 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 17:33:03.275 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 17:33:03.377 [http-nio-8082-exec-5] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, null, 자격 증명에 실패하였습니다.
+2025-02-15 17:34:16.790 [http-nio-8082-exec-8] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 17:34:16.790 [http-nio-8082-exec-8] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 17:34:16.793 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 17:34:16.793 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 17:34:16.864 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 17:34:16.864 [http-nio-8082-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:13:14.867 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:13:15.044 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:13:15.091 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:13:15.154 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:13:15.154 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:17:07.616 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 2380 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:17:07.619 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:17:08.284 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:17:08.377 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:17:09.367 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:17:09.380 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:17:09.381 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:17:09.382 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:17:09.451 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:17:09.451 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1769 ms
+2025-02-15 18:17:09.619 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:17:09.705 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:17:09.746 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:17:10.036 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:17:10.065 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:17:10.267 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@227b9277
+2025-02-15 18:17:10.270 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:17:10.321 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:17:10.337 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:17:11.292 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:17:11.450 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:17:11.772 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:17:12.233 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:17:12.418 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:17:12.481 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:17:12.498 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:17:12.506 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 5.582 seconds (process running for 6.576)
+2025-02-15 18:18:37.534 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:18:37.655 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:18:37.659 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:18:37.661 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:18:37.663 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:18:44.054 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 2776 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:18:44.056 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:18:44.736 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:18:44.779 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:18:45.524 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:18:45.535 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:18:45.536 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:18:45.537 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:18:45.604 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:18:45.605 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1437 ms
+2025-02-15 18:18:45.750 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:18:45.822 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:18:45.856 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:18:46.154 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:18:46.189 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:18:46.385 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@79777da7
+2025-02-15 18:18:46.387 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:18:46.434 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:18:46.454 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:18:47.410 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:18:47.538 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:18:47.794 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:18:48.206 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:18:48.351 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:18:48.401 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:18:48.418 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:18:48.426 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 4.984 seconds (process running for 5.66)
+2025-02-15 18:18:55.595 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 18:18:55.595 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 18:18:55.596 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-15 18:18:55.618 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:55.618 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:55.841 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:55.842 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:55.850 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:55.850 [http-nio-8082-exec-4] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:55.850 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:55.850 [http-nio-8082-exec-4] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:55.856 [http-nio-8082-exec-6] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:55.856 [http-nio-8082-exec-6] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:55.859 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:55.860 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:56.247 [http-nio-8082-exec-7] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:56.247 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:56.248 [http-nio-8082-exec-7] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:56.248 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:56.330 [http-nio-8082-exec-8] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:18:56.330 [http-nio-8082-exec-8] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:18:56.681 [http-nio-8082-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 330 ms
+2025-02-15 18:19:42.678 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:19:42.678 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:19:42.946 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:19:42.994 [http-nio-8082-exec-3] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, null, Email not found in the system.
+2025-02-15 18:20:22.754 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:20:22.755 [http-nio-8082-exec-5] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:20:22.758 [http-nio-8082-exec-5] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : julie08051@naver.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 18:20:22.759 [http-nio-8082-exec-5] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 18:20:22.761 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:20:22.877 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - 
+    /* insert for
+        org.edusync.tutor.entity.User */insert 
+    into
+        public.users (birth_date, class_name, created_at, email, grade, last_login_at, nickname, password, phone_number, profile_image_url, school_name, social_id, social_provider, updated_at, user_type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-02-15 18:20:22.917 [http-nio-8082-exec-5] DEBUG org.hibernate.SQL - 
+    /* insert for
+        org.edusync.tutor.entity.User.roles */insert 
+    into
+        public.user_roles (user_id, roles) 
+    values
+        (?, ?)
+2025-02-15 18:20:22.928 [http-nio-8082-exec-5] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 정상 처리 완료
+2025-02-15 18:20:22.929 [http-nio-8082-exec-5] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : julie08051@naver.com
+2025-02-15 18:20:27.758 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:20:27.759 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:20:27.762 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:20:27.770 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:20:37.045 [http-nio-8082-exec-9] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-220d536b047sm40454355ad.101 - gsmtp
+, Authentication failed
+2025-02-15 18:31:12.898 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:31:13.067 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:31:13.104 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:31:13.139 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:31:13.149 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:31:22.870 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 21288 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:31:22.872 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:31:23.746 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:31:23.814 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:31:24.840 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:31:24.851 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:31:24.853 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:31:24.853 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:31:24.932 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:31:24.932 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1973 ms
+2025-02-15 18:31:25.115 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:31:25.189 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:31:25.231 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:31:25.551 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:31:25.583 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:31:25.814 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6585df70
+2025-02-15 18:31:25.816 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:31:25.868 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:31:25.885 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:31:26.938 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:31:27.084 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:31:27.431 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:31:27.961 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:31:28.157 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:31:28.222 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:31:28.245 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:31:28.253 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 6.204 seconds (process running for 7.447)
+2025-02-15 18:31:32.084 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 18:31:32.085 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 18:31:32.086 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-15 18:31:32.127 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:31:32.127 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:31:32.445 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:31:32.512 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:31:35.685 [http-nio-8082-exec-1] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-7324273ca16sm4484048b3a.119 - gsmtp
+, Authentication failed
+2025-02-15 18:32:05.490 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:32:05.490 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:32:05.497 [http-nio-8082-exec-3] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : julie08051@naver.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 18:32:05.498 [http-nio-8082-exec-3] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 18:32:05.500 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:32:05.502 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:32:05.505 [http-nio-8082-exec-3] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : julie08051@naver.com
+2025-02-15 18:32:14.800 [http-nio-8082-exec-4] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:32:14.801 [http-nio-8082-exec-4] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:32:14.804 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:32:14.806 [http-nio-8082-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:32:17.906 [http-nio-8082-exec-4] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-2fc13ab07d6sm4429860a91.2 - gsmtp
+, Authentication failed
+2025-02-15 18:33:24.690 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:33:24.832 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:33:24.844 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:33:24.858 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:33:24.862 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:33:29.110 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 10372 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:33:29.112 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:33:29.723 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:33:29.773 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:33:30.567 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:33:30.577 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:33:30.578 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:33:30.578 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:33:30.642 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:33:30.642 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1471 ms
+2025-02-15 18:33:30.811 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:33:30.888 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:33:30.931 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:33:31.234 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:33:31.268 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:33:31.440 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e681097
+2025-02-15 18:33:31.443 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:33:31.484 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:33:31.501 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:33:32.720 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:33:32.850 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:33:33.112 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:33:33.527 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:33:33.680 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:33:33.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:33:33.755 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:33:33.763 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 5.3 seconds (process running for 6.048)
+2025-02-15 18:33:40.330 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 18:33:40.330 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 18:33:40.331 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-15 18:33:40.348 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:33:40.348 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:33:40.370 [http-nio-8082-exec-1] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : julie08051@naver.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 18:33:40.370 [http-nio-8082-exec-1] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 18:33:40.467 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:33:40.497 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:33:40.503 [http-nio-8082-exec-1] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : julie08051@naver.com
+2025-02-15 18:33:46.054 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:33:46.054 [http-nio-8082-exec-2] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:33:46.112 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:33:46.115 [http-nio-8082-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:33:49.187 [http-nio-8082-exec-2] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-220d558fe46sm40161425ad.239 - gsmtp
+, Authentication failed
+2025-02-15 18:34:56.979 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:34:57.113 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:34:57.122 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:34:57.125 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:34:57.127 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:35:01.770 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 2324 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:35:01.774 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:35:02.627 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:35:02.672 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:35:03.435 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:35:03.448 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:35:03.449 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:35:03.450 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:35:03.514 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:35:03.515 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1664 ms
+2025-02-15 18:35:03.676 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:35:03.749 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:35:03.785 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:35:04.174 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:35:04.205 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:35:04.359 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12270a01
+2025-02-15 18:35:04.361 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:35:04.405 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:35:04.424 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:35:05.398 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:35:05.574 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:35:05.827 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:35:06.258 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:35:06.400 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:35:06.451 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:35:06.479 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:35:06.488 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 5.53 seconds (process running for 6.194)
+2025-02-15 18:35:12.428 [http-nio-8082-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 18:35:12.429 [http-nio-8082-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 18:35:12.430 [http-nio-8082-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-15 18:35:12.453 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:35:12.453 [http-nio-8082-exec-3] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:35:12.479 [http-nio-8082-exec-3] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : julie08051@naver.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 18:35:12.480 [http-nio-8082-exec-3] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 18:35:12.603 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:35:12.641 [http-nio-8082-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:35:12.648 [http-nio-8082-exec-3] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : julie08051@naver.com
+2025-02-15 18:35:16.651 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:35:16.651 [http-nio-8082-exec-9] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:35:16.684 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:35:16.686 [http-nio-8082-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:37:16.311 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:37:16.490 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:37:16.511 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:37:16.541 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:37:16.549 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:37:21.446 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 28284 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:37:21.448 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:37:22.303 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:37:22.355 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:37:23.235 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:37:23.246 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:37:23.247 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:37:23.248 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:37:23.315 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:37:23.316 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1811 ms
+2025-02-15 18:37:23.470 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:37:23.554 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:37:23.587 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:37:23.893 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:37:23.928 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:37:24.161 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27746c5e
+2025-02-15 18:37:24.163 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:37:24.215 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:37:24.232 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:37:25.256 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:37:25.406 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:37:25.692 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:37:26.152 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:37:26.330 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:37:26.389 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:37:26.409 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:37:26.416 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 5.808 seconds (process running for 6.701)
+2025-02-15 18:37:56.971 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 18:37:56.972 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 18:37:56.973 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-15 18:37:56.992 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:37:56.992 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:37:57.015 [http-nio-8082-exec-1] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : julie08051@naver.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 18:37:57.015 [http-nio-8082-exec-1] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 18:37:57.134 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:37:57.169 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:37:57.177 [http-nio-8082-exec-1] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : julie08051@naver.com
+2025-02-15 18:38:00.217 [http-nio-8082-exec-7] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:38:00.217 [http-nio-8082-exec-7] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:38:00.252 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:38:00.255 [http-nio-8082-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:38:03.325 [http-nio-8082-exec-7] ERROR o.e.tutor.controller.AuthController - ExceptionHandler called, jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-220d82e843fsm39044375ad.220 - gsmtp
+, Authentication failed
+2025-02-15 18:40:31.640 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:40:31.806 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:40:31.834 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:40:31.877 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:40:31.889 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-15 18:40:36.267 [main] INFO  org.edusync.tutor.TutorApplication - Starting TutorApplication using Java 17.0.13 with PID 5176 (C:\Users\user\EduSync\build\classes\java\main started by user in C:\Users\user\EduSync)
+2025-02-15 18:40:36.268 [main] INFO  org.edusync.tutor.TutorApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 18:40:36.871 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 18:40:36.931 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2025-02-15 18:40:37.677 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2025-02-15 18:40:37.689 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:40:37.690 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-15 18:40:37.692 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 18:40:37.755 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-15 18:40:37.756 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1439 ms
+2025-02-15 18:40:37.930 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 18:40:38.007 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 18:40:38.041 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-15 18:40:38.310 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 18:40:38.337 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-15 18:40:38.485 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c8fe8ad
+2025-02-15 18:40:38.486 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-15 18:40:38.528 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-15 18:40:38.546 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 18:40:39.522 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 18:40:39.655 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:40:39.927 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-02-15 18:40:40.377 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-15 18:40:40.542 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/EduSyncDB'
+2025-02-15 18:40:40.603 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2025-02-15 18:40:40.623 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/'
+2025-02-15 18:40:40.632 [main] INFO  org.edusync.tutor.TutorApplication - Started TutorApplication in 5.175 seconds (process running for 5.944)
+2025-02-15 18:41:16.338 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 18:41:16.338 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-15 18:41:16.339 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-02-15 18:41:16.362 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:41:16.362 [http-nio-8082-exec-1] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:41:16.389 [http-nio-8082-exec-1] INFO  o.e.tutor.controller.AuthController - [registerUser] Performing user registration. email : julie08051@naver.com, password : ****, phoneNumber : 01011112222, schoolName : hongik, userType : STUDENT
+2025-02-15 18:41:16.389 [http-nio-8082-exec-1] INFO  o.e.tutor.service.SignServiceImpl - [getSignUpResult] 회원 가입 정보 전달
+2025-02-15 18:41:16.504 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:41:16.540 [http-nio-8082-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:41:16.548 [http-nio-8082-exec-1] INFO  o.e.tutor.controller.AuthController - [registerUser] User registration completed. email : julie08051@naver.com
+2025-02-15 18:41:23.056 [http-nio-8082-exec-6] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 추출 완료. token : null
+2025-02-15 18:41:23.056 [http-nio-8082-exec-6] INFO  o.e.t.s.JwtAuthenticationFilter - [doFilterInternal] token 값 유효성 체크 시작
+2025-02-15 18:41:23.105 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - 
+    /* <criteria> */ select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.class_name,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phone_number,
+        u1_0.profile_image_url,
+        u1_0.school_name,
+        u1_0.social_id,
+        u1_0.social_provider,
+        u1_0.updated_at,
+        u1_0.user_type 
+    from
+        public.users u1_0 
+    where
+        u1_0.email=?
+2025-02-15 18:41:23.107 [http-nio-8082-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        r1_0.user_id,
+        r1_0.roles 
+    from
+        public.user_roles r1_0 
+    where
+        r1_0.user_id=?
+2025-02-15 18:42:14.988 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-15 18:42:15.353 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-15 18:42:15.363 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 18:42:15.368 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-15 18:42:15.370 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
