@@ -10,6 +10,10 @@ import org.edusync.tutor.security.CommonResponse;
 import org.edusync.tutor.security.JwtTokenProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +30,7 @@ public class SignServiceImpl implements SignService {
     private final UserRepository userRepository;
     private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
 
     @Override
     public SignUpResultDto signUp(String email, String password, String nickname, String phoneNumber, String schoolName, String userType, String role) {
@@ -67,27 +72,22 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public SignInResultDto signIn(String email, String password) throws RuntimeException {
-        LOGGER.info("[getSignInResult] Requesting user information with email");
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(email, password)
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
         User user = userRepository.findByEmail(email)
-            .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
-        LOGGER.info("[getSignInResult] Email : {}", email);
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-        LOGGER.info("[getSignInResult] Performing password comparison");
-        if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new RuntimeException();
-        }
+        String token = jwtTokenProvider.createToken(user.getEmail(), user.getRoles());
 
-        LOGGER.info("[getSignInResult] Password match");
-
-        LOGGER.info("[getSignInResult] Creating SignInResultDto object");
-        SignInResultDto signInResultDto = SignInResultDto.builder()
-                .token(jwtTokenProvider.createToken(user.getUsername(),user.getRoles()))
+        return SignInResultDto.builder()
+                .token(token)
+                .userId(user.getId())
+                .role(user.getUserType().name())
                 .build();
-
-        LOGGER.info("[getSignInResult] Injecting values into SignInResultDto object");
-        setSuccessResult(signInResultDto);
-
-        return signInResultDto;
     }
 
     private void setSuccessResult(SignUpResultDto result) {
@@ -102,15 +102,4 @@ public class SignServiceImpl implements SignService {
         result.setMsg(CommonResponse.FAIL.getMsg());
     }
 
-    private void setSuccessResult(SignInResultDto result) {
-        result.setSuccess(true);
-        result.setCode(CommonResponse.SUCCESS.getCode());
-        result.setMsg(CommonResponse.SUCCESS.getMsg());
-    }
-
-    private void setFailResult(SignInResultDto result) {
-        result.setSuccess(false);
-        result.setCode(CommonResponse.FAIL.getCode());
-        result.setMsg(CommonResponse.FAIL.getMsg());
-    }
 }

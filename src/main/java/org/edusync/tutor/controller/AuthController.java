@@ -2,9 +2,11 @@ package org.edusync.tutor.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.edusync.tutor.dto.SignInResultDto;
-import org.edusync.tutor.dto.SignUpResultDto;
+import org.edusync.tutor.dto.*;
+import org.edusync.tutor.service.AuthService;
 import org.edusync.tutor.service.SignService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -29,6 +32,9 @@ public class AuthController {
     public AuthController(SignService signService) {
         this.signService = signService;
     }
+
+    @Autowired
+    private AuthService authService;
 
     @PostMapping("/register")
     @Operation(summary = "Register a new user", description = "Registers a new user with the provided details.")
@@ -50,16 +56,21 @@ public class AuthController {
 
     @PostMapping("/login")
     @Operation(summary = "Login a user", description = "Logs in a user with the provided credentials.")
-    public SignInResultDto loginUser(
-            @Parameter(description = "Email", required = true) @RequestParam String email,
-            @Parameter(description = "Password", required = true) @RequestParam String password) throws RuntimeException {
-        LOGGER.info("[loginUser] Attempting to log in. email : {}, password : ****", email);
-        SignInResultDto signInResultDto = signService.signIn(email, password);
+    public ResponseEntity<SignInResultDto> login(@Validated @RequestBody SignInRequest signInRequest) {
+        SignInResultDto signInResult = signService.signIn(signInRequest.getEmail(), signInRequest.getPassword());
+        return ResponseEntity.ok(signInResult);
+    }
 
-        if (signInResultDto.getCode() == 0) {
-            LOGGER.info("[loginUser] Successfully logged in. email : {}, token : {}", email, signInResultDto.getToken());
-        }
-        return signInResultDto;
+    @PostMapping("/password-reset/send")
+    @Operation(summary = "Send password reset code", description = "Sends a verification code to the user's email for password reset.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Verification code sent to email."),
+            @ApiResponse(responseCode = "400", description = "Invalid email format."),
+            @ApiResponse(responseCode = "404", description = "Email not found in the system.")
+    })
+    public ResponseEntity<PasswordResetResponse> sendPasswordResetCode(@Validated @RequestBody PasswordResetRequest request) {
+        PasswordResetResponse response = authService.sendPasswordResetCode(request);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/exception")

@@ -7,8 +7,6 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignInResultDto {
-    private Long userId;
-    private String role;
-    private String token;
+public class PasswordResetResponse {
+    private String message;
 }

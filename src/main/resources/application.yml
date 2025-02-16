@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/EduSyncDB
     username: postgres
-    password: sshs1sshs!
+    password: julie0805
     driver-class-name: org.postgresql.Driver
     hikari:
       connection-init-sql: SET NAMES 'UTF8'
@@ -39,6 +39,20 @@ spring:
     defer-datasource-initialization: true
     database: postgresql
 
+  # 메일 전송
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: julie0805114
+    password: xwuofgfhrctpxphj
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+
 # 인코딩 설정
 http:
   encoding:
@@ -48,9 +62,9 @@ http:
 
 # 서버 설정
 server:
-  port: 8080
+  port: 8082
   servlet:
-    context-path: /api
+    context-path: /
   error:
     include-message: always
     include-binding-errors: always
