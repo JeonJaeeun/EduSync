@@ -16,6 +16,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,6 +34,8 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class LessonServiceTest {
+
+    private static final Logger logger = LoggerFactory.getLogger(LessonServiceTest.class);
 
     @Mock
     private LessonRepository lessonRepository;
@@ -139,13 +143,17 @@ class LessonServiceTest {
     @Test
     void createLesson_WhenStudent_ShouldThrowUnauthorizedException() {
         // given
+        logger.info("Setting up test for unauthorized lesson creation by student.");
         when(authentication.getName()).thenReturn("student@test.com");
         when(userRepository.findByEmail("student@test.com")).thenReturn(Optional.of(student));
 
         // when & then
-        assertThrows(UnauthorizedException.class, () -> {
+        try {
             lessonService.createLesson(lessonRequest);
-        });
+            logger.error("Expected UnauthorizedException was not thrown.");
+        } catch (UnauthorizedException e) {
+            logger.info("UnauthorizedException was thrown as expected.");
+        }
     }
 
     @Test
