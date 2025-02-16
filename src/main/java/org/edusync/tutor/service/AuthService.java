@@ -1,4 +1,3 @@
-// AuthService.java
 package org.edusync.tutor.service;
 
 import jakarta.mail.MessagingException;
@@ -24,12 +23,8 @@ public class AuthService {
                 .orElseThrow(() -> new ResourceNotFoundException("Email not found in the system."));
 
         // 인증번호 생성 및 이메일 발송 로직
-        String verificationCode = "123456"; // 실제로는 랜덤 생성
-        String subject = "Password Reset Verification Code";
-        String text = "Your verification code is: " + verificationCode;
-
         try {
-            emailService.sendEmail(user.getEmail(), subject, text);
+            String verificationCode = emailService.sendVerificationCode(user.getEmail());
         } catch (MessagingException e) {
             throw new RuntimeException("Failed to send email", e);
         }

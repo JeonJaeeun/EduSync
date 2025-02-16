@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.edusync.tutor.dto.*;
 import org.edusync.tutor.service.AuthService;
+import org.edusync.tutor.service.PasswordResetService;
 import org.edusync.tutor.service.SignService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,9 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
+
+    @Autowired
+    private PasswordResetService passwordResetService;
 
     @PostMapping("/register")
     @Operation(summary = "Register a new user", description = "Registers a new user with the provided details.")
@@ -71,6 +75,16 @@ public class AuthController {
     public ResponseEntity<PasswordResetResponse> sendPasswordResetCode(@Validated @RequestBody PasswordResetRequest request) {
         PasswordResetResponse response = authService.sendPasswordResetCode(request);
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/password-reset/verify")
+    public ResponseEntity<?> verifyCodeAndResetPassword(@RequestBody VerificationRequest request) {
+        boolean success = passwordResetService.verifyCodeAndResetPassword(request.getEmail(), request.getVerificationCode(), request.getNewPassword());
+        if (success) {
+            return ResponseEntity.ok(Map.of("message", "Password reset successfully."));
+        } else {
+            return ResponseEntity.badRequest().body(Map.of("error", "Invalid verification code."));
+        }
     }
 
     @GetMapping("/exception")
