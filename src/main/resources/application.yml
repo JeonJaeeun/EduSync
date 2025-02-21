@@ -104,3 +104,7 @@ flyway:
   enabled: false  # Flyway 비활성화
   baseline-on-migrate: false
   validate-on-migrate: false
+
+firebase:
+  service-account:
+    path: src/main/resources/centered-sol-394902-firebase-adminsdk-fbsvc-f99a8775ae.json

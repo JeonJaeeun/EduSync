@@ -91,6 +91,9 @@ dependencies {
 	// 추가 JPA 관련 의존성
 	implementation 'org.hibernate.orm:hibernate-core'
 	implementation 'org.springframework.data:spring-data-jpa'
+
+	// Firebase
+	implementation 'com.google.firebase:firebase-admin:8.0.0'
 }
 
 tasks.named('test') {
