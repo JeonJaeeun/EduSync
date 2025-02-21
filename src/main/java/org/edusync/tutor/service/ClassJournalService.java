@@ -10,6 +10,8 @@ import org.edusync.tutor.exception.ResourceNotFoundException;
 import org.edusync.tutor.exception.UnauthorizedException;
 import org.edusync.tutor.repository.ClassJournalRepository;
 import org.edusync.tutor.repository.LessonRepository;
+import org.edusync.tutor.repository.UserRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,10 +24,10 @@ import java.util.stream.Collectors;
 public class ClassJournalService {
     private final ClassJournalRepository journalRepository;
     private final LessonRepository lessonRepository;
-    private final UserService userService;
+    private final UserRepository userRepository;
 
     public ClassJournalResponse createJournal(Long lessonId, ClassJournalRequest request) {
-        User currentUser = userService.getCurrentUser();
+        User currentUser = getCurrentUser();
         Lesson lesson = lessonRepository.findById(lessonId)
             .orElseThrow(() -> new ResourceNotFoundException("수업을 찾을 수 없습니다."));
 
@@ -51,7 +53,7 @@ public class ClassJournalService {
 
     @Transactional(readOnly = true)
     public List<ClassJournalResponse> getJournals(Long lessonId) {
-        User currentUser = userService.getCurrentUser();
+        User currentUser = getCurrentUser();
         Lesson lesson = lessonRepository.findById(lessonId)
             .orElseThrow(() -> new ResourceNotFoundException("수업을 찾을 수 없습니다."));
 
@@ -67,7 +69,7 @@ public class ClassJournalService {
         ClassJournal journal = journalRepository.findById(journalId)
             .orElseThrow(() -> new ResourceNotFoundException("수업일지를 찾을 수 없습니다."));
 
-        User currentUser = userService.getCurrentUser();
+        User currentUser = getCurrentUser();
         validateAccess(currentUser, journal.getLesson());
 
         return mapToResponse(journal);
@@ -77,7 +79,7 @@ public class ClassJournalService {
         ClassJournal journal = journalRepository.findById(journalId)
             .orElseThrow(() -> new ResourceNotFoundException("수업일지를 찾을 수 없습니다."));
 
-        User currentUser = userService.getCurrentUser();
+        User currentUser = getCurrentUser();
         if (!journal.getLesson().getTeacher().getId().equals(currentUser.getId())) {
             throw new UnauthorizedException("수업일지를 수정할 권한이 없습니다.");
         }
@@ -95,7 +97,7 @@ public class ClassJournalService {
         ClassJournal journal = journalRepository.findById(journalId)
             .orElseThrow(() -> new ResourceNotFoundException("수업일지를 찾을 수 없습니다."));
 
-        User currentUser = userService.getCurrentUser();
+        User currentUser = getCurrentUser();
         if (!journal.getLesson().getTeacher().getId().equals(currentUser.getId())) {
             throw new UnauthorizedException("수업일지를 삭제할 권한이 없습니다.");
         }
@@ -122,5 +124,11 @@ public class ClassJournalService {
             .createdAt(journal.getCreatedAt())
             .updatedAt(journal.getUpdatedAt())
             .build();
+    }
+
+    private User getCurrentUser() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        return userRepository.findByEmail(email)
+            .orElseThrow(() -> new UnauthorizedException("인증 정보를 찾을 수 없습니다."));
     }
 } 

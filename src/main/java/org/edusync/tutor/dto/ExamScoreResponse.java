@@ -1,14 +1,20 @@
 package org.edusync.tutor.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Getter @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ExamScoreResponse {
     private Long id;
+    private Long examId;
+    private Long studentId;
     private String subject;
-    private Float score;
+    private Integer score;
     private String grade;
     private Integer unit;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 } 

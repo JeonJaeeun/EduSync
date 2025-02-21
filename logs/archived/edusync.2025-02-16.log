@@ -1,0 +1,1904 @@
+2025-02-14 20:25:14.545 [Test worker] INFO  o.e.t.c.LessonControllerTest - Starting LessonControllerTest using Java 17.0.13 with PID 30500 (started by GFCON in C:\Users\GFCON\Documents\Project\SpringBoot_Backend\EduSync)
+2025-02-14 20:25:14.552 [Test worker] INFO  o.e.t.c.LessonControllerTest - The following 1 profile is active: "test"
+2025-02-14 20:25:16.248 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 20:25:16.325 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2025-02-14 20:25:16.330 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=passwordEncoderConfiguration; factoryMethodName=passwordEncoder; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/edusync/tutor/config/PasswordEncoderConfiguration.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=testConfig; factoryMethodName=passwordEncoder; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in org.edusync.tutor.config.TestConfig]
+2025-02-14 20:25:16.331 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 20:25:16.341 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'lessonRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.LessonRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.LessonRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:25:16.342 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'examRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:25:16.344 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'examScoreRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamScoreRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamScoreRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:25:16.346 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'userRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.UserRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.UserRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:25:16.347 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'classJournalRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ClassJournalRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ClassJournalRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:25:16.348 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 5 JPA repository interfaces.
+2025-02-14 20:25:17.792 [Test worker] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2025-02-14 20:25:17.812 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-02-14 20:25:17.816 [Test worker] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-14 20:25:17.817 [Test worker] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-14 20:25:17.935 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-02-14 20:25:17.936 [Test worker] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3359 ms
+2025-02-14 20:25:18.028 [Test worker] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-02-14 20:25:18.306 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-14 20:25:18.405 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-14 20:25:18.481 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-14 20:25:19.058 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-14 20:25:19.116 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-14 20:25:19.140 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@39342614']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-14 20:25:20.443 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-14 20:25:20.464 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists class_journals cascade 
+2025-02-14 20:25:20.469 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists exam_scores cascade 
+2025-02-14 20:25:20.469 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists exams cascade 
+2025-02-14 20:25:20.470 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists lessons cascade 
+2025-02-14 20:25:20.470 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists User_roles cascade 
+2025-02-14 20:25:20.471 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists users cascade 
+2025-02-14 20:25:20.483 [Test worker] DEBUG org.hibernate.SQL - 
+    create table class_journals (
+        homeworkCompletion integer,
+        lessonDate date not null,
+        createdAt timestamp(6) not null,
+        id bigint generated by default as identity,
+        lesson_id bigint not null,
+        updatedAt timestamp(6) not null,
+        progress varchar(255),
+        journal_content clob,
+        primary key (id)
+    )
+2025-02-14 20:25:20.498 [Test worker] DEBUG org.hibernate.SQL - 
+    create table exam_scores (
+        score integer,
+        exam_id bigint,
+        id bigint generated by default as identity,
+        student_id bigint,
+        primary key (id)
+    )
+2025-02-14 20:25:20.500 [Test worker] DEBUG org.hibernate.SQL - 
+    create table exams (
+        id bigint generated by default as identity,
+        lesson_id bigint,
+        primary key (id)
+    )
+2025-02-14 20:25:20.504 [Test worker] DEBUG org.hibernate.SQL - 
+    create table lessons (
+        is_active boolean,
+        lesson_end_time time(6) not null,
+        lesson_start_time time(6) not null,
+        tuition integer,
+        createdAt timestamp(6) not null,
+        id bigint generated by default as identity,
+        student_id bigint not null,
+        teacher_id bigint not null,
+        updatedAt timestamp(6) not null,
+        lesson_day varchar(255) not null,
+        subject varchar(255) not null,
+        tuition_cycle varchar(255),
+        primary key (id)
+    )
+2025-02-14 20:25:20.508 [Test worker] DEBUG org.hibernate.SQL - 
+    create table User_roles (
+        User_id bigint not null,
+        roles varchar(255)
+    )
+2025-02-14 20:25:20.514 [Test worker] DEBUG org.hibernate.SQL - 
+    create table users (
+        birthDate date,
+        grade integer,
+        createdAt timestamp(6) not null,
+        id bigint generated by default as identity,
+        last_login_at timestamp(6),
+        updatedAt timestamp(6) not null,
+        phoneNumber varchar(15),
+        class_name varchar(20),
+        nickname varchar(50),
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        profile_image_url varchar(255),
+        schoolName varchar(255),
+        socialId varchar(255),
+        social_provider enum ('GOOGLE','KAKAO','NAVER','NONE'),
+        user_type enum ('PARENT','STUDENT','TEACHER') not null,
+        primary key (id)
+    )
+2025-02-14 20:25:20.524 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists class_journals 
+       add constraint FK68ehoibny2h9i80ku4o6xi7q 
+       foreign key (lesson_id) 
+       references lessons
+2025-02-14 20:25:20.544 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists exam_scores 
+       add constraint FK3nseo19v46orjurqglparefix 
+       foreign key (exam_id) 
+       references exams
+2025-02-14 20:25:20.547 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists exam_scores 
+       add constraint FKixop9tlxfuivu02snthwu5pkp 
+       foreign key (student_id) 
+       references users
+2025-02-14 20:25:20.551 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists exams 
+       add constraint FKl8cqdyqs24nfu8rj7elugh6nc 
+       foreign key (lesson_id) 
+       references lessons
+2025-02-14 20:25:20.554 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists lessons 
+       add constraint FK843n4rnjdhi154ra8472wg8ho 
+       foreign key (student_id) 
+       references users
+2025-02-14 20:25:20.560 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists lessons 
+       add constraint FKes95yw68i7qsrabf92vsepcth 
+       foreign key (teacher_id) 
+       references users
+2025-02-14 20:25:20.563 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists User_roles 
+       add constraint FKjuwnguphj5t4rhh2swd2ag6uv 
+       foreign key (User_id) 
+       references users
+2025-02-14 20:25:20.573 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 20:25:21.517 [Test worker] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-02-14 20:25:24.085 [Test worker] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-14 20:25:24.426 [Test worker] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-02-14 20:25:24.526 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:24.527 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:24.529 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-02-14 20:25:24.985 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2025-02-14 20:25:25.035 [Test worker] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 63654 (http) with context path '/api'
+2025-02-14 20:25:25.066 [Test worker] INFO  o.e.t.c.LessonControllerTest - Started LessonControllerTest in 11.179 seconds (process running for 13.205)
+2025-02-14 20:25:26.032 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:25:26.036 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:26.036 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:26.037 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:25:26.038 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:25:26.038 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:25:26.360 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:26.413 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 1
+2025-02-14 20:25:26.490 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:26.492 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 2
+2025-02-14 20:25:26.558 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjMyNiwiZXhwIjoxNzM5NTM1OTI2fQ.rc9QC2DzdcbpkH3QjocQKRKpYf8QbNLGbWHrQ5oFXcfrVBF44sBB_2_TRKh3oz-s
+2025-02-14 20:25:26.560 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjMyNiwiZXhwIjoxNzM5NTM1OTI2fQ.T6rffld8raZsnYShPlcmIDFRLp57iY6SBTjOMXUiej6s4BZbq-cq7tUqIe7_mVAC
+2025-02-14 20:25:26.560 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:25:26.560 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:25:26.835 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:26.945 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:26.948 [Test worker] ERROR o.e.t.controller.LessonController - Failed to create lesson
+org.edusync.tutor.exception.UnauthorizedException: 선생님만 수업을 생성할 수 있습니다.
+	at org.edusync.tutor.service.LessonService.createLesson(LessonService.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at org.edusync.tutor.service.LessonService$$SpringCGLIB$$0.createLesson(<generated>)
+	at org.edusync.tutor.controller.LessonController.createLesson(LessonController.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.edusync.tutor.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurer$DelegateFilter.doFilter(SecurityMockMvcConfigurer.java:132)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at org.edusync.tutor.controller.LessonControllerTest.createLesson_Unauthorized(LessonControllerTest.java:165)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-02-14 20:25:27.125 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:25:27.134 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:27.134 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:27.137 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+2025-02-14 20:25:27.137 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:25:27.137 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:25:27.357 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:27.365 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 3
+2025-02-14 20:25:27.559 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:27.588 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 4
+2025-02-14 20:25:27.589 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjMyNywiZXhwIjoxNzM5NTM1OTI3fQ.DLhe3rOQpoXy4YhYsoHR6xlDjdiILLNmUBRvy6DTxl0cnm-zPXIOklbe_tMxAeZc
+2025-02-14 20:25:27.591 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjMyNywiZXhwIjoxNzM5NTM1OTI3fQ.OzdOs7GxpOU-GY-EVNKbUxfP93lzuEKraira-iFbdtHg-Tgejz3sExn3o4zzNi7x
+2025-02-14 20:25:27.591 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:25:27.591 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:25:27.592 [Test worker] INFO  o.e.t.c.LessonControllerTest - Starting createLesson_Success test
+2025-02-14 20:25:27.621 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:27.633 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:27.670 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:27.674 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 1
+2025-02-14 20:25:27.735 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:25:27.742 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:27.747 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:27.753 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 5 ms
+2025-02-14 20:25:27.754 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:25:27.754 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:25:27.977 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:27.991 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 5
+2025-02-14 20:25:28.086 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:28.088 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 6
+2025-02-14 20:25:28.102 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjMyOCwiZXhwIjoxNzM5NTM1OTI4fQ._dkTclzmWYNnFcmGr8-KEtPIyl97d03KWA20Iy0AF7dN5lAduMzZJATD4vNAJ3jt
+2025-02-14 20:25:28.104 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjMyOCwiZXhwIjoxNzM5NTM1OTI4fQ.zLBla91DZgnxidjYVAWZz4SfDGKG5bv8b1VMyZf1O9PUQuw9rzbNyDY8ScdxJKpp
+2025-02-14 20:25:28.104 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:25:28.105 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:25:28.117 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.140 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.143 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:28.147 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 2
+2025-02-14 20:25:28.181 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.195 [Test worker] INFO  o.e.t.controller.LessonController - Deleting lesson with ID: 2
+2025-02-14 20:25:28.203 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.339 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:25:28.339 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:28.339 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:28.340 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:25:28.341 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:25:28.341 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:25:28.456 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:28.471 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 7
+2025-02-14 20:25:28.568 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:28.574 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 8
+2025-02-14 20:25:28.577 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjMyOCwiZXhwIjoxNzM5NTM1OTI4fQ._dkTclzmWYNnFcmGr8-KEtPIyl97d03KWA20Iy0AF7dN5lAduMzZJATD4vNAJ3jt
+2025-02-14 20:25:28.590 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjMyOCwiZXhwIjoxNzM5NTM1OTI4fQ.zLBla91DZgnxidjYVAWZz4SfDGKG5bv8b1VMyZf1O9PUQuw9rzbNyDY8ScdxJKpp
+2025-02-14 20:25:28.591 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:25:28.591 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:25:28.614 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.620 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.622 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:28.624 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 3
+2025-02-14 20:25:28.656 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.659 [Test worker] INFO  o.e.t.controller.LessonController - Fetching lesson with ID: 3
+2025-02-14 20:25:28.675 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:28.718 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:25:28.721 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:28.722 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:28.725 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-02-14 20:25:28.726 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:25:28.727 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:25:28.927 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:28.932 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 9
+2025-02-14 20:25:29.052 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:29.054 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 10
+2025-02-14 20:25:29.055 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjMyOSwiZXhwIjoxNzM5NTM1OTI5fQ.m9yEmEj-BjJKdILjUXiylRAeC2o6OyuiIppzYXhMFkZJqTpSidbh7Gy1zT4ao5r4
+2025-02-14 20:25:29.057 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjMyOSwiZXhwIjoxNzM5NTM1OTI5fQ.bI3o-gfCSStIOkFvjhowEdHRv2QeHScptLk5vdzOMCoJpyVHj5x8O4oGKjk9a1fL
+2025-02-14 20:25:29.057 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:25:29.057 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:25:29.079 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:29.082 [Test worker] INFO  o.e.t.controller.LessonController - Fetching lessons for current user
+2025-02-14 20:25:29.085 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:29.111 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.createdAt,
+        l1_0.is_active,
+        l1_0.lesson_day,
+        l1_0.lesson_end_time,
+        l1_0.lesson_start_time,
+        l1_0.student_id,
+        l1_0.subject,
+        l1_0.teacher_id,
+        l1_0.tuition,
+        l1_0.tuition_cycle,
+        l1_0.updatedAt 
+    from
+        lessons l1_0 
+    left join
+        users t1_0 
+            on t1_0.id=l1_0.teacher_id 
+    where
+        t1_0.id=?
+2025-02-14 20:25:29.118 [Test worker] INFO  o.e.t.controller.LessonController - Found 0 lessons
+2025-02-14 20:25:29.135 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:25:29.136 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:25:29.136 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:25:29.139 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-02-14 20:25:29.139 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:25:29.139 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:25:29.217 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:29.220 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 11
+2025-02-14 20:25:29.323 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:29.325 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 12
+2025-02-14 20:25:29.327 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjMyOSwiZXhwIjoxNzM5NTM1OTI5fQ.m9yEmEj-BjJKdILjUXiylRAeC2o6OyuiIppzYXhMFkZJqTpSidbh7Gy1zT4ao5r4
+2025-02-14 20:25:29.330 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjMyOSwiZXhwIjoxNzM5NTM1OTI5fQ.bI3o-gfCSStIOkFvjhowEdHRv2QeHScptLk5vdzOMCoJpyVHj5x8O4oGKjk9a1fL
+2025-02-14 20:25:29.330 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:25:29.330 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:25:29.339 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:29.345 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:29.349 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:25:29.351 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 4
+2025-02-14 20:25:29.362 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:29.365 [Test worker] INFO  o.e.t.controller.LessonController - Updating lesson with ID: 4
+2025-02-14 20:25:29.369 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:25:29.436 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-14 20:25:29.921 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-14 20:25:29.926 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 20:25:29.927 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists class_journals cascade 
+2025-02-14 20:25:29.930 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists exam_scores cascade 
+2025-02-14 20:25:29.932 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists exams cascade 
+2025-02-14 20:25:29.933 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists lessons cascade 
+2025-02-14 20:25:29.946 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists User_roles cascade 
+2025-02-14 20:25:29.947 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists users cascade 
+2025-02-14 20:25:29.950 [SpringApplicationShutdownHook] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2025-02-14 20:27:56.120 [Test worker] INFO  o.e.t.c.LessonControllerTest - Starting LessonControllerTest using Java 17.0.13 with PID 19596 (started by GFCON in C:\Users\GFCON\Documents\Project\SpringBoot_Backend\EduSync)
+2025-02-14 20:27:56.122 [Test worker] INFO  o.e.t.c.LessonControllerTest - The following 1 profile is active: "test"
+2025-02-14 20:27:57.044 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 20:27:57.121 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 5 JPA repository interfaces.
+2025-02-14 20:27:57.126 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=passwordEncoderConfiguration; factoryMethodName=passwordEncoder; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/edusync/tutor/config/PasswordEncoderConfiguration.class]] with [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=testConfig; factoryMethodName=passwordEncoder; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in org.edusync.tutor.config.TestConfig]
+2025-02-14 20:27:57.127 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 20:27:57.141 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'examRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:27:57.144 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'userRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.UserRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.UserRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:27:57.146 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'classJournalRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ClassJournalRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ClassJournalRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:27:57.148 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'examScoreRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamScoreRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.ExamScoreRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:27:57.151 [Test worker] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'lessonRepository' with a different definition: replacing [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.LessonRepository defined in @EnableJpaRepositories declared on TutorApplication] with [Root bean: class=org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in org.edusync.tutor.repository.LessonRepository defined in @EnableJpaRepositories declared on TestConfig]
+2025-02-14 20:27:57.152 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2025-02-14 20:27:59.132 [Test worker] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2025-02-14 20:27:59.171 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2025-02-14 20:27:59.176 [Test worker] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-14 20:27:59.177 [Test worker] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-14 20:27:59.335 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-02-14 20:27:59.336 [Test worker] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3189 ms
+2025-02-14 20:27:59.436 [Test worker] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-02-14 20:27:59.911 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-14 20:28:00.037 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-14 20:28:00.119 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-14 20:28:00.650 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-14 20:28:00.745 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-14 20:28:00.777 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@11f9b95a']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-14 20:28:02.081 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-14 20:28:02.099 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists class_journals cascade 
+2025-02-14 20:28:02.104 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists exam_scores cascade 
+2025-02-14 20:28:02.105 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists exams cascade 
+2025-02-14 20:28:02.105 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists lessons cascade 
+2025-02-14 20:28:02.107 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists User_roles cascade 
+2025-02-14 20:28:02.108 [Test worker] DEBUG org.hibernate.SQL - 
+    drop table if exists users cascade 
+2025-02-14 20:28:02.116 [Test worker] DEBUG org.hibernate.SQL - 
+    create table class_journals (
+        homeworkCompletion integer,
+        lessonDate date not null,
+        createdAt timestamp(6) not null,
+        id bigint generated by default as identity,
+        lesson_id bigint not null,
+        updatedAt timestamp(6) not null,
+        progress varchar(255),
+        journal_content clob,
+        primary key (id)
+    )
+2025-02-14 20:28:02.134 [Test worker] DEBUG org.hibernate.SQL - 
+    create table exam_scores (
+        score integer,
+        exam_id bigint,
+        id bigint generated by default as identity,
+        student_id bigint,
+        primary key (id)
+    )
+2025-02-14 20:28:02.136 [Test worker] DEBUG org.hibernate.SQL - 
+    create table exams (
+        id bigint generated by default as identity,
+        lesson_id bigint,
+        primary key (id)
+    )
+2025-02-14 20:28:02.140 [Test worker] DEBUG org.hibernate.SQL - 
+    create table lessons (
+        is_active boolean,
+        lesson_end_time time(6) not null,
+        lesson_start_time time(6) not null,
+        tuition integer,
+        createdAt timestamp(6) not null,
+        id bigint generated by default as identity,
+        student_id bigint not null,
+        teacher_id bigint not null,
+        updatedAt timestamp(6) not null,
+        lesson_day varchar(255) not null,
+        subject varchar(255) not null,
+        tuition_cycle varchar(255),
+        primary key (id)
+    )
+2025-02-14 20:28:02.146 [Test worker] DEBUG org.hibernate.SQL - 
+    create table User_roles (
+        User_id bigint not null,
+        roles varchar(255)
+    )
+2025-02-14 20:28:02.150 [Test worker] DEBUG org.hibernate.SQL - 
+    create table users (
+        birthDate date,
+        grade integer,
+        createdAt timestamp(6) not null,
+        id bigint generated by default as identity,
+        last_login_at timestamp(6),
+        updatedAt timestamp(6) not null,
+        phoneNumber varchar(15),
+        class_name varchar(20),
+        nickname varchar(50),
+        email varchar(255) not null unique,
+        password varchar(255) not null,
+        profile_image_url varchar(255),
+        schoolName varchar(255),
+        socialId varchar(255),
+        social_provider enum ('GOOGLE','KAKAO','NAVER','NONE'),
+        user_type enum ('PARENT','STUDENT','TEACHER') not null,
+        primary key (id)
+    )
+2025-02-14 20:28:02.158 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists class_journals 
+       add constraint FK68ehoibny2h9i80ku4o6xi7q 
+       foreign key (lesson_id) 
+       references lessons
+2025-02-14 20:28:02.175 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists exam_scores 
+       add constraint FK3nseo19v46orjurqglparefix 
+       foreign key (exam_id) 
+       references exams
+2025-02-14 20:28:02.179 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists exam_scores 
+       add constraint FKixop9tlxfuivu02snthwu5pkp 
+       foreign key (student_id) 
+       references users
+2025-02-14 20:28:02.184 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists exams 
+       add constraint FKl8cqdyqs24nfu8rj7elugh6nc 
+       foreign key (lesson_id) 
+       references lessons
+2025-02-14 20:28:02.187 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists lessons 
+       add constraint FK843n4rnjdhi154ra8472wg8ho 
+       foreign key (student_id) 
+       references users
+2025-02-14 20:28:02.190 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists lessons 
+       add constraint FKes95yw68i7qsrabf92vsepcth 
+       foreign key (teacher_id) 
+       references users
+2025-02-14 20:28:02.193 [Test worker] DEBUG org.hibernate.SQL - 
+    alter table if exists User_roles 
+       add constraint FKjuwnguphj5t4rhh2swd2ag6uv 
+       foreign key (User_id) 
+       references users
+2025-02-14 20:28:02.203 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 20:28:02.979 [Test worker] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-02-14 20:28:05.420 [Test worker] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-02-14 20:28:05.818 [Test worker] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-02-14 20:28:06.018 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:06.018 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:06.020 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:28:06.199 [Test worker] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2025-02-14 20:28:06.215 [Test worker] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 63813 (http) with context path '/api'
+2025-02-14 20:28:06.231 [Test worker] INFO  o.e.t.c.LessonControllerTest - Started LessonControllerTest in 10.714 seconds (process running for 13.51)
+2025-02-14 20:28:06.844 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:28:06.846 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:06.846 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:06.847 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:28:06.847 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:28:06.847 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:28:07.001 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:07.053 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 1
+2025-02-14 20:28:07.143 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:07.144 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 2
+2025-02-14 20:28:07.209 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjQ4NywiZXhwIjoxNzM5NTM2MDg3fQ.BZHha9UQqtbrxZYxIHiKqupv3VQEXRNdVd32GZgAIt8aVOEYtM2HeNRQGEekhh8B
+2025-02-14 20:28:07.211 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjQ4NywiZXhwIjoxNzM5NTM2MDg3fQ.1V-bDqVGPPg9I2c5bHANeg47mfyc34lWyVutxdVWikYYtAqweh8auIXBoPNtuXIW
+2025-02-14 20:28:07.211 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:28:07.212 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:28:07.462 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:07.536 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:07.538 [Test worker] ERROR o.e.t.controller.LessonController - Failed to create lesson
+org.edusync.tutor.exception.UnauthorizedException: 선생님만 수업을 생성할 수 있습니다.
+	at org.edusync.tutor.service.LessonService.createLesson(LessonService.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at org.edusync.tutor.service.LessonService$$SpringCGLIB$$0.createLesson(<generated>)
+	at org.edusync.tutor.controller.LessonController.createLesson(LessonController.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.edusync.tutor.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:33)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurer$DelegateFilter.doFilter(SecurityMockMvcConfigurer.java:132)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at org.edusync.tutor.controller.LessonControllerTest.createLesson_Unauthorized(LessonControllerTest.java:165)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-02-14 20:28:07.613 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:28:07.615 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:07.615 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:07.616 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:28:07.616 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:28:07.616 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:28:07.703 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:07.706 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 3
+2025-02-14 20:28:07.787 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:07.789 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 4
+2025-02-14 20:28:07.792 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjQ4NywiZXhwIjoxNzM5NTM2MDg3fQ.BZHha9UQqtbrxZYxIHiKqupv3VQEXRNdVd32GZgAIt8aVOEYtM2HeNRQGEekhh8B
+2025-02-14 20:28:07.795 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjQ4NywiZXhwIjoxNzM5NTM2MDg3fQ.1V-bDqVGPPg9I2c5bHANeg47mfyc34lWyVutxdVWikYYtAqweh8auIXBoPNtuXIW
+2025-02-14 20:28:07.795 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:28:07.795 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:28:07.796 [Test worker] INFO  o.e.t.c.LessonControllerTest - Starting createLesson_Success test
+2025-02-14 20:28:07.806 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:07.813 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:07.830 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:07.834 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 1
+2025-02-14 20:28:07.848 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:28:07.849 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:07.849 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:07.851 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:28:07.852 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:28:07.852 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:28:07.929 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:07.931 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 5
+2025-02-14 20:28:08.009 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.011 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 6
+2025-02-14 20:28:08.013 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.DHL4nngiCcNEHV5xMJJKFPzJG987m5lzIRXNWgj6qd3N0caYX1LdSdfdotEBScsa
+2025-02-14 20:28:08.016 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.yxFIDvYiZvtblFfnBupXfDCjlrK8oPerk2gCvJTTNPqcIu7wedAzL1dgna5EkNXY
+2025-02-14 20:28:08.016 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:28:08.016 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:28:08.045 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.051 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.053 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.055 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 2
+2025-02-14 20:28:08.068 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.083 [Test worker] INFO  o.e.t.controller.LessonController - Deleting lesson with ID: 2
+2025-02-14 20:28:08.087 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.158 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:28:08.158 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:08.158 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:08.160 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:28:08.160 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:28:08.160 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:28:08.237 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.241 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 7
+2025-02-14 20:28:08.325 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.326 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 8
+2025-02-14 20:28:08.329 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.DHL4nngiCcNEHV5xMJJKFPzJG987m5lzIRXNWgj6qd3N0caYX1LdSdfdotEBScsa
+2025-02-14 20:28:08.330 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.yxFIDvYiZvtblFfnBupXfDCjlrK8oPerk2gCvJTTNPqcIu7wedAzL1dgna5EkNXY
+2025-02-14 20:28:08.331 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:28:08.331 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:28:08.341 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.348 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.350 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.352 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 3
+2025-02-14 20:28:08.377 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.379 [Test worker] INFO  o.e.t.controller.LessonController - Fetching lesson with ID: 3
+2025-02-14 20:28:08.383 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.415 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:28:08.417 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:08.418 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:08.419 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-02-14 20:28:08.419 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:28:08.419 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:28:08.494 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.497 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 9
+2025-02-14 20:28:08.591 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.592 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 10
+2025-02-14 20:28:08.594 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.DHL4nngiCcNEHV5xMJJKFPzJG987m5lzIRXNWgj6qd3N0caYX1LdSdfdotEBScsa
+2025-02-14 20:28:08.596 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.yxFIDvYiZvtblFfnBupXfDCjlrK8oPerk2gCvJTTNPqcIu7wedAzL1dgna5EkNXY
+2025-02-14 20:28:08.596 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:28:08.596 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:28:08.606 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.609 [Test worker] INFO  o.e.t.controller.LessonController - Fetching lessons for current user
+2025-02-14 20:28:08.611 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.636 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.id,
+        l1_0.createdAt,
+        l1_0.is_active,
+        l1_0.lesson_day,
+        l1_0.lesson_end_time,
+        l1_0.lesson_start_time,
+        l1_0.student_id,
+        l1_0.subject,
+        l1_0.teacher_id,
+        l1_0.tuition,
+        l1_0.tuition_cycle,
+        l1_0.updatedAt 
+    from
+        lessons l1_0 
+    left join
+        users t1_0 
+            on t1_0.id=l1_0.teacher_id 
+    where
+        t1_0.id=?
+2025-02-14 20:28:08.643 [Test worker] INFO  o.e.t.controller.LessonController - Found 0 lessons
+2025-02-14 20:28:08.659 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Starting ===
+2025-02-14 20:28:08.660 [Test worker] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring TestDispatcherServlet ''
+2025-02-14 20:28:08.660 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-02-14 20:28:08.662 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-02-14 20:28:08.662 [Test worker] INFO  o.e.t.c.LessonControllerTest - MockMvc setup completed
+2025-02-14 20:28:08.662 [Test worker] INFO  o.e.t.c.LessonControllerTest - ObjectMapper setup completed
+2025-02-14 20:28:08.786 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.790 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher created with ID: 11
+2025-02-14 20:28:08.934 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (birthDate, class_name, createdAt, email, grade, last_login_at, nickname, password, phoneNumber, profile_image_url, schoolName, socialId, social_provider, updatedAt, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.935 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student created with ID: 12
+2025-02-14 20:28:08.937 [Test worker] INFO  o.e.t.c.LessonControllerTest - Teacher token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZWFjaGVyQHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9URUFDSEVSIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.DHL4nngiCcNEHV5xMJJKFPzJG987m5lzIRXNWgj6qd3N0caYX1LdSdfdotEBScsa
+2025-02-14 20:28:08.940 [Test worker] INFO  o.e.t.c.LessonControllerTest - Student token created: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdHVkZW50QHRlc3QuY29tIiwicm9sZXMiOlsiUk9MRV9TVFVERU5UIl0sImlhdCI6MTczOTUzMjQ4OCwiZXhwIjoxNzM5NTM2MDg4fQ.yxFIDvYiZvtblFfnBupXfDCjlrK8oPerk2gCvJTTNPqcIu7wedAzL1dgna5EkNXY
+2025-02-14 20:28:08.940 [Test worker] INFO  o.e.t.c.LessonControllerTest - LessonRequest created
+2025-02-14 20:28:08.940 [Test worker] INFO  o.e.t.c.LessonControllerTest - === Test Setup Completed ===
+2025-02-14 20:28:08.953 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.961 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:08.981 [Test worker] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        lessons
+        (createdAt, is_active, lesson_day, lesson_end_time, lesson_start_time, student_id, subject, teacher_id, tuition, tuition_cycle, updatedAt, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-02-14 20:28:08.983 [Test worker] INFO  o.e.t.controller.LessonController - Successfully created lesson with ID: 4
+2025-02-14 20:28:09.010 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:09.014 [Test worker] INFO  o.e.t.controller.LessonController - Updating lesson with ID: 4
+2025-02-14 20:28:09.037 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birthDate,
+        u1_0.class_name,
+        u1_0.createdAt,
+        u1_0.email,
+        u1_0.grade,
+        u1_0.last_login_at,
+        u1_0.nickname,
+        u1_0.password,
+        u1_0.phoneNumber,
+        u1_0.profile_image_url,
+        u1_0.schoolName,
+        u1_0.socialId,
+        u1_0.social_provider,
+        u1_0.updatedAt,
+        u1_0.user_type 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2025-02-14 20:28:09.096 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-14 20:28:09.327 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-02-14 20:28:09.333 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 20:28:09.334 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists class_journals cascade 
+2025-02-14 20:28:09.339 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists exam_scores cascade 
+2025-02-14 20:28:09.340 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists exams cascade 
+2025-02-14 20:28:09.342 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists lessons cascade 
+2025-02-14 20:28:09.343 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists User_roles cascade 
+2025-02-14 20:28:09.344 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - 
+    drop table if exists users cascade 
+2025-02-14 20:28:09.346 [SpringApplicationShutdownHook] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
