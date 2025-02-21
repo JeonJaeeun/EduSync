@@ -48,7 +48,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 public class ExamScoreControllerTest {
     private static final Logger logger = LoggerFactory.getLogger(ExamScoreControllerTest.class);
-
+ 
     static {
         System.setProperty("spring.profiles.active", "test");
     }
