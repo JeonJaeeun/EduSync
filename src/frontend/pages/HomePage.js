@@ -69,7 +69,7 @@ export default function HomeScreen() {
     setSelectedDate(dateString);
     setSelectedMonth(localDate.getMonth() + 1);
     setSelectedDay(localDate.getDate());
-    setSelectedDayOfWeek(daysOfWeek[(localDate.getDay() + 6) % 7]); // 인덱스 보정 강화
+    setSelectedDayOfWeek(daysOfWeek[(localDate.getDay() + 6) % 7]); 
   };
 
   const deleteSchedule = (date, id) => {
@@ -115,16 +115,13 @@ export default function HomeScreen() {
   }, []);
 
 
-
-  // Horizontal Calendar 
   const getWeekDates = () => {
     const dates = [];
     const today = new Date();
     const startOfWeek = new Date(today);
     
-    // 월요일 기준 주 시작 계산
-    const day = today.getDay(); // 0:일 ~ 6:토
-    const diff = day === 0 ? 6 : day - 1; // 일요일인 경우 6일 전으로
+    const day = today.getDay(); 
+    const diff = day === 0 ? 6 : day - 1; 
     startOfWeek.setDate(today.getDate() - diff);
   
     for (let i = 0; i < 7; i++) {
@@ -273,7 +270,6 @@ export default function HomeScreen() {
                     <Text style={styles.todaySchdule}>기록된 일정이 없습니다.</Text>
                   </View>
                 </View>
-                {/* Horizontal Calendar 추가 */}
                 {renderHorizontalCalendar()}
               </View>
               <View style={styles.classjournalArea}>

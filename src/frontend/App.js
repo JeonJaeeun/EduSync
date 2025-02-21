@@ -10,9 +10,6 @@ import SignUpStep4Screen from "./pages/signUp/SignUpStep4Page";
 import SignUpStep5Screen from "./pages/signUp/SignUpStep5Page";
 import SignUpStep6Screen from "./pages/signUp/SignUpStep6Page";
 import HomeScreen from "./pages/HomePage";
-import Header from "./components/Header";
-//import StudentManagementScreen from "./pages/StudentManagementPage";
-//import StudentGradeScreen from "./pages/StudentGradePage";
 import StudentManagementStack from "./stacks/StudentManagementStack";
 
 const Stack = createStackNavigator();
