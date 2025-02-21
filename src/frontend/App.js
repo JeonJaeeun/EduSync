@@ -10,11 +10,11 @@ import SignUpStep4Screen from "./pages/signUp/SignUpStep4Page";
 import SignUpStep5Screen from "./pages/signUp/SignUpStep5Page";
 import SignUpStep6Screen from "./pages/signUp/SignUpStep6Page";
 import HomeScreen from "./pages/HomePage";
-import Header from "./components/Header";
+import StudentManagementStack from "./stacks/StudentManagementStack";
 
 const Stack = createStackNavigator();
-
 export default function App() {
+
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -27,6 +27,7 @@ export default function App() {
                 <Stack.Screen name="SignupStep5" component={SignUpStep5Screen} />
                 <Stack.Screen name="SignupStep6" component={SignUpStep6Screen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="StudentManagement" component={StudentManagementStack} />
             </Stack.Navigator>
         </NavigationContainer>
     );
