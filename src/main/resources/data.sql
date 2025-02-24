@@ -8,9 +8,9 @@ VALUES
 -- Sample classes
 INSERT INTO classes (teacher_id, student_id, subject, lesson_day, lesson_start_time, lesson_end_time, tuition, tuition_cycle, created_at, updated_at)
 VALUES
-    (3, 1, 'Math', 'MON,WED', '15:00', '17:00', 300000, 'monthly', NOW(), NOW());
+    (3, 1, 'Math', 'MON,WED', '15:00', '17:00', 300000, 'monthly', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 -- Sample class journals
 INSERT INTO class_journals (class_id, lesson_date, progress, journal_content, homework_completion, created_at, updated_at)
 VALUES
-    (1, '2025-01-10', 'Chapter 1-3', 'Focused on algebra basics', 80, NOW(), NOW());
+    (1, '2025-01-10', 'Chapter 1-3', 'Focused on algebra basics', 80, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

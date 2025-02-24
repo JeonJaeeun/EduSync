@@ -1,22 +1,110 @@
 spring:
   application:
-    name: tutor # 애플리케이션 이름
+    name: tutor
+
   datasource:
-    url: jdbc:h2:mem:devdb-${USER} # 개발자별 고유 데이터베이스 (OS 사용자 이름 기반)
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/EduSyncDB
+    username: postgres
+    password: sshs1sshs!
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-init-sql: SET NAMES 'UTF8'
+      connection-test-query: SELECT 1
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 30000
+      connection-timeout: 10000
+      max-lifetime: 1800000
+
   h2:
     console:
       enabled: true
       path: /h2-console
+      settings:
+        web-allow-others: true
+
   jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: create-drop # 애플리케이션 종료 시 데이터베이스 삭제
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+        show_sql: true
+        use_sql_comments: true
+        default_schema: public
+    generate-ddl: true
+    defer-datasource-initialization: true
+    database: postgresql
+
+  # 메일 전송
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: julie0805114
+    password: xwuofgfhrctpxphj
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 5000
+          starttls:
+            enable: true
+
+# 인코딩 설정
+http:
+  encoding:
+    charset: UTF-8
+    enabled: true
+    force: true
+
+# 서버 설정
+server:
+  port: 8080
+  servlet:
+    context-path: /
+  error:
+    include-message: always
+    include-binding-errors: always
+    whitelabel:
+      enabled: false
+
+# 로깅 설정
+logging:
+  level:
+    root: INFO
+    org.edusync.tutor: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  file:
+    name: logs/edusync.log
+
+jwt:
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQ=
+  expiration: 86400000
+
+mvc:
+  static-path-pattern: /static/**
+  pathmatch:
+    matching-strategy: ant_path_matcher
+
+web:
+  resources:
+    static-locations: classpath:/static/
+    add-mappings: true
+
   sql:
     init:
       mode: always
+
+flyway:
+  enabled: false  # Flyway 비활성화
+  baseline-on-migrate: false
+  validate-on-migrate: false
+
+firebase:
+  service-account:
+    path: src/main/resources/centered-sol-394902-firebase-adminsdk-fbsvc-f99a8775ae.json

@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    generate-ddl: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: never  # 테스트에서는 data.sql 실행하지 않음 
+
+  flyway:
+    enabled: false  # 테스트에서는 Flyway 비활성화
+    baseline-on-migrate: false
+    locations: classpath:db/migration
+    clean-disabled: true
+
+  security:
+    jwt:
+      secret: testsecretkeytestsecretkeytestsecretkeytestsecretkeytestsecretkeytestsecretkey
+      token-validity-in-seconds: 3600
+
+  main:
+    allow-bean-definition-overriding: true  # 빈 오버라이딩 허용 

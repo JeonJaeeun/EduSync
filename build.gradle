@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.1'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'com.github.johnrengelman.processes' version '0.5.0'
 }
 
 group = 'org.edusync'
@@ -18,32 +19,90 @@ repositories {
 }
 
 dependencies {
+
+
 	// ============= [Spring Boot Starters] ============= //
 	// 1) WEB: Spring MVC + REST
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	// 2) Security: 인증/인가, OAuth2
+	// 2) Security: 인증/인가, spring-security-crypto, Swagger
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.security:spring-security-crypto:5.7.1'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+	compileOnly 'org.projectlombok:lombok:1.18.28'
+	annotationProcessor 'org.projectlombok:lombok:1.18.28'
+
 	// JWT 사용 시, spring-security-oauth2-resource-server도 함께 쓰거나, jjwt 등 별도 라이브러리 추가 가능
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 	// 3) JPA: Postgres/H2 등 SQL DB 연동
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	runtimeOnly 'org.postgresql:postgresql'   // PostgreSQL JDBC 드라이버
-	runtimeOnly 'com.h2database:h2'          // 개발/테스트용 H2 DB
+	implementation 'org.postgresql:postgresql'
+	runtimeOnly 'com.h2database:h2'
 
 	// 4) Querydsl 의존성 추가\ // Spring Boot 3.x 버전에서는 jakarta 네임스페이스를 사용
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
 	annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jakarta'
 	annotationProcessor 'jakarta.annotation:jakarta.annotation-api'
 	annotationProcessor 'jakarta.persistence:jakarta.persistence-api'
-
+	annotationProcessor 'org.projectlombok:lombok:1.18.28'
+	
 	// 5) Test: JUnit, Spring Boot 테스트
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// PostgreSQL
+	implementation 'org.postgresql:postgresql'
+	implementation 'org.flywaydb:flyway-core'
+	runtimeOnly 'org.postgresql:postgresql'
+	// H2는 테스트용으로 범위 변경
+	testImplementation 'com.h2database:h2'
+	// Swagger
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.7.0'
+	// email 전송
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	// Lombok 의존성 (이미 있는 경우 중복 제거)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot Starter Logging (자동으로 Logback 포함)
+	implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+	// Test 의존성 추가
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.h2database:h2'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+	// Test에서도 Lombok 사용
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	
+	// Logging 의존성
+	implementation 'ch.qos.logback:logback-classic'
+	implementation 'org.slf4j:slf4j-api'
+
+	// Jakarta Persistence
+	implementation 'jakarta.persistence:jakarta.persistence-api'
+	implementation 'org.springframework:spring-orm'
+	
+	// 추가 JPA 관련 의존성
+	implementation 'org.hibernate.orm:hibernate-core'
+	implementation 'org.springframework.data:spring-data-jpa'
+
+	// Firebase
+	implementation 'com.google.firebase:firebase-admin:8.0.0'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+		exceptionFormat "full"
+		showStandardStreams = true
+	}
 }
 
 
@@ -54,6 +113,11 @@ def querydslDir = layout.buildDirectory.dir("generated/querydsl").get().asFile
 // 2. main 소스 세트에 Q 클래스 디렉토리를 포함시켜, 생성된 Q 클래스들이 컴파일 대상에 포함
 sourceSets {
 	main.java.srcDirs += [querydslDir]
+	test {
+		resources {
+			srcDirs = ["src/test/resources"]
+		}
+	}
 }
 // 3. Java 컴파일 시, 어노테이션 프로세서가 생성한 소스 파일의 출력을 지정한 디렉토리로 설정
 tasks.withType(JavaCompile).configureEach {
@@ -62,4 +126,11 @@ tasks.withType(JavaCompile).configureEach {
 // 4. 'clean' 작업이 수행될 때, 생성된 Q 클래스 디렉토리를 삭제하여 빌드 환경을 정리
 clean.doLast {
 	delete querydslDir
+}
+
+// 환경 변수 처리를 위한 설정
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
 }

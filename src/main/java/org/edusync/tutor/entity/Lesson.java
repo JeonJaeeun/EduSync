@@ -1,38 +1,54 @@
 package org.edusync.tutor.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 import java.time.LocalTime;
+import java.time.LocalDateTime;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
-@Table(name = "classes")
-public class Lesson {  // 기존 Class에서 Lesson로 변경 -> QClass 와 이상한 오류 생김(이름은 class가 아니도록)
+@Table(name = "lessons")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacher_id", nullable = false)
     private User teacher;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
     private User student;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String subject;
 
-    @Column(nullable = false, length = 20)
+    @Column(name = "lesson_day", nullable = false)
     private String lessonDay;
 
+    @Column(name = "lesson_start_time", nullable = false)
     private LocalTime lessonStartTime;
 
+    @Column(name = "lesson_end_time", nullable = false)
     private LocalTime lessonEndTime;
 
     private Integer tuition;
 
-    @Column(length = 20)
+    @Column(name = "tuition_cycle")
     private String tuitionCycle;
+
+    @Builder.Default
+    @Column(name = "is_active")
+    private Boolean isActive = true;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -50,4 +66,4 @@ public class Lesson {  // 기존 Class에서 Lesson로 변경 -> QClass 와 이�
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
-}
+} 
