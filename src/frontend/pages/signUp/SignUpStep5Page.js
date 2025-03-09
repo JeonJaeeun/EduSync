@@ -16,7 +16,7 @@ import SignUpHeader from "../../components/SignUpHeader";
 
 export default function SignUpStep5Page({ route }) {
     const navigation = useNavigation();
-    const { email, password, nickname, phone, userTypes } = route.params; // Step4에서 받은 정보
+    const { email, password, nickname, phone, userType } = route.params; // Step4에서 받은 정보
 
     const [schoolName, setSchoolName] = useState("");
     const [isContinueEnabled, setIsContinueEnabled] = useState(false);
@@ -32,7 +32,7 @@ export default function SignUpStep5Page({ route }) {
             password,
             nickname,
             phone,
-            userTypes,
+            userType,
             schoolName,
         });
     };

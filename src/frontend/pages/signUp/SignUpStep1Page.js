@@ -11,7 +11,7 @@ export default function SignUpStep1Page() {
     const [selectedUserType, setSelectedUserType] = useState("");
     const navigation = useNavigation();
 
-    const userTypes = ["학생", "학부모", "과외 선생님"];
+    const userType = ["학생", "학부모", "과외 선생님"];
 
     const handleSelectUserType = (type) => {
         setSelectedUserType(type);
@@ -20,7 +20,7 @@ export default function SignUpStep1Page() {
 
     const handleContinue =() => {
         if(selectedUserType){
-            navigation.navigate("SignupStep2", { userTypes: selectedUserType });
+            navigation.navigate("SignupStep2", { userType: selectedUserType });
         }
     };
 
@@ -51,7 +51,7 @@ export default function SignUpStep1Page() {
                     <View style={styles.modalContent}>
                         <View style={styles.modalHandle} />
                         <Text style={styles.modalTitle}>사용자 유형을 선택해주세요</Text>
-                        {userTypes.map((type, index) => (
+                        {userType.map((type, index) => (
                             <TouchableOpacity
                                 key={index}
                                 style={styles.option}

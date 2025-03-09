@@ -17,7 +17,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function SignUpStep3Page({ route }) {
     const navigation = useNavigation();
-    const { email, userTypes } = route.params;
+    const { email, userType } = route.params;
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [isPasswordValid, setIsPasswordValid] = useState(false);
@@ -45,7 +45,7 @@ export default function SignUpStep3Page({ route }) {
         if (step === 1 && isPasswordValid) {
             setStep(2);
         } else if (step === 2 && doPasswordsMatch) {
-            navigation.navigate("SignupStep4", { email, password, userTypes });
+            navigation.navigate("SignupStep4", { email, password, userType });
         }
     };
 

@@ -16,7 +16,7 @@ import SignUpHeader from "../../components/SignUpHeader";
 
 export default function SignUpStep4Page({ route }) {
     const navigation = useNavigation();
-    const { userTypes, email, password } = route.params;
+    const { userType, email, password } = route.params;
 
     const [nickname, setNickname] = useState("");
     const [phone, setPhone] = useState("");
@@ -39,10 +39,10 @@ export default function SignUpStep4Page({ route }) {
             setIsFirstSkipVisible(false);
             setIsSecondSkipVisible(true);
         } else {
-            if(userTypes === "학생") {
-                navigation.navigate("SignupStep5", {email, password, nickname, phone, userTypes});
+            if(userType === "학생") {
+                navigation.navigate("SignupStep5", {email, password, nickname, phone, userType});
             } else {
-                navigation.navigate("SignupStep6", {email, password, nickname, phone, userTypes});
+                navigation.navigate("SignupStep6", {email, password, nickname, phone, userType});
             }
         }
     };

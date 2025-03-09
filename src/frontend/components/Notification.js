@@ -1,15 +1,22 @@
 // Notification.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, ScrollView, StyleSheet, Switch } from "react-native";
 import Modal from "react-native-modal";
+import { getNotifications } from "../utils/NotificationUtils";
 
 const Notification = ({ isModalVisible, toggleModal, isNotificationOn, setNotificationOn }) => {
-    const notifications = [
-        { type: "과외비 입금일 안내", message: "11월 27일은 김정우 학생의 과외비 지급일입니다!", color: "red", time: "12시간 전" },
-        { type: "수업일지 작성", message: "아직 11월 06일 윤태원 학생의 수업일지를 작성하지 않으셔요!", color: "blue", time: "11월 13일" },
-        { type: "수업일지 작성", message: "김정우 학생 9주차 수업일지에 코멘트가 담렸어요!", color: "blue", time: "11월 12일" },
-        { type: "과외 구인구직", message: "새로운 과외 신청이 들어왔어요!", color: "green", time: "11월 11일" }
-    ];
+
+    const [notifications, setNotifications] = useState([]);
+
+    useEffect(() => {
+        // 알림 목록 불러오기
+        async function fetchNotifications() {
+            const fetchedNotifications = await getNotifications();
+            setNotifications(fetchedNotifications);
+        }
+
+        fetchNotifications();
+    }, []);
 
     return (
         <Modal isVisible={isModalVisible} onBackdropPress={toggleModal} backdropTransitionOutTiming={0} style={styles.modalContainer}>
