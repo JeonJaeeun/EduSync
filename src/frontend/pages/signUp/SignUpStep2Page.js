@@ -17,7 +17,7 @@ import SignUpHeader from "../../components/SignUpHeader";
 export default function SignUpStep2Page() {
     const navigation = useNavigation();
     const route = useRoute();
-    const { userTypes } = route.params;
+    const { userType } = route.params;
     const [email, setEmail] = useState("");
     const [verificationCode, setVerificationCode] = useState("");
     const [isEmailValid, setIsEmailValid] = useState(false);
@@ -51,7 +51,7 @@ export default function SignUpStep2Page() {
     };
 
     const navigateToNextStep = () => {
-        navigation.navigate("SignupStep3", { email, userTypes });
+        navigation.navigate("SignupStep3", { email, userType });
     };
 
     const handleContinue = () => {
@@ -194,4 +194,3 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
 });
-

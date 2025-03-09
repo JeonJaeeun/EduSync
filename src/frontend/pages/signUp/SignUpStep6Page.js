@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     ScrollView,
     StyleSheet,
+    Alert
 } from "react-native";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import SignUpHeader from "../../components/SignUpHeader";
@@ -14,28 +15,51 @@ export default function SignUpStep6Page() {
     const route = useRoute();
     const navigation = useNavigation();
 
-    const { email, password, nickname, phone, userTypes, schoolName } = route.params;
+    const { email, password, nickname, phone, userType, schoolName } = route.params;
 
     const [termsAccepted, setTermsAccepted] = useState(false);
     const [personalInfoAccepted, setPersonalInfoAccepted] = useState(false);
     const [ageConfirmed, setAgeConfirmed] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const allChecked = termsAccepted && personalInfoAccepted;
 
-    const handleCompleteSignUp = () => {
-        if (allChecked) {
-            const userData = {
-                email,
-                password,
-                nickname,
-                phone,
-                userTypes,
-                ...(userTypes === "학생" && { schoolName }) // 학생일 때만 schoolName 포함
-            };
-            console.log("회원가입 정보:", userData);
-            // 이후 회원가입 처리 로직 추가
+    const handleCompleteSignUp = async () => {
+        if (!allChecked) {
+            Alert.alert("회원가입 실패", "약관에 동의해야 합니다.");
+            return;
+        }
 
-            navigation.navigate("Login");
+        setLoading(true);
+
+        const userData = {
+            email,
+            password,
+            nickname,
+            phoneNumber: phone,
+            schoolName: userType === "학생" ? schoolName : "",
+            userType: userType.toUpperCase() // STUDENT, TEACHER, PARENT
+        };
+
+        try {
+            const response = await fetch("http://172.30.1.18:8080/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                Alert.alert("회원가입 완료", "이제 로그인할 수 있습니다!");
+                navigation.navigate("Login"); // 로그인 화면으로 이동
+            } else {
+                Alert.alert("회원가입 실패", data.error || "다시 시도해주세요.");
+            }
+        } catch (error) {
+            Alert.alert("오류 발생", "서버와 연결할 수 없습니다.");
+        } finally {
+            setLoading(false);
         }
     };
 
